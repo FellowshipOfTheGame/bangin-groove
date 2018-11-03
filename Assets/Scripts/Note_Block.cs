@@ -12,7 +12,6 @@ public class Note_Block : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		speed = Rhythm_Manager.instance.spawners[0].speed;
-		Build(notes);
 	}
 	
 	// Update is called once per frame

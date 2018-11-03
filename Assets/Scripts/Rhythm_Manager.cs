@@ -6,11 +6,10 @@ public class Rhythm_Manager : MonoBehaviour {
 
 	public float bpm;
 	int count = 1;
-	float offset;
+	public float offset;
 	float crotchet;
 	float songPos, initialPos;
 	public AudioSource source;
-	public double dspTimeSong;
 
 	public static Rhythm_Manager instance;
 	public Note_Spawner[] spawners;
@@ -25,16 +24,17 @@ public class Rhythm_Manager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		initialPos = (float)(AudioSettings.dspTime - dspTimeSong) * source.pitch - offset;
+		initialPos = (float)(AudioSettings.dspTime) * source.pitch + offset;
 		crotchet = 60.0f / bpm;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		songPos = (float)(AudioSettings.dspTime - dspTimeSong) * source.pitch - offset - initialPos;
+		songPos = (float)(AudioSettings.dspTime) * source.pitch - initialPos;
 		if (songPos >= count * crotchet){
 			foreach (Note_Spawner ns in spawners){
 				ns.ChangeStep();
+				Debug.Log(songPos.ToString() + " " + count.ToString() + " " + crotchet.ToString());
 			}
 			count++;
 		}

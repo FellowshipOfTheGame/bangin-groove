@@ -21,6 +21,13 @@ public class Note_Receptor : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		if (spawn.blocks.Count > 0){
+			if(spawn.blocks[0].transform.position.y <= this.transform.position.y - okRange){ 
+				Destroy(spawn.blocks[0].gameObject);
+				spawn.blocks.RemoveAt(0);
+			}
+		}
+
 		if (Input.GetKeyDown(KeyCode.LeftArrow)){
 			if (!pressed[0] && !pressed[1] && !pressed[2] && !pressed[3]) 
 				startime = Time.time;
