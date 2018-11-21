@@ -12,6 +12,7 @@ public class Note_Receptor : MonoBehaviour {
 	public float okRange;
 	public float goodRange;
 	public float perfectRange;
+    public int playerIndex;
 
 	// Use this for initialization
 	void Start () {
@@ -26,28 +27,52 @@ public class Note_Receptor : MonoBehaviour {
 				Destroy(spawn.blocks[0].gameObject);
 				spawn.blocks.RemoveAt(0);
 			}
-		}
 
-		if (Input.GetKeyDown(KeyCode.LeftArrow)){
-			if (!pressed[0] && !pressed[1] && !pressed[2] && !pressed[3]) 
-				startime = Time.time;
-			pressed[0] = true;
-		}
-		if (Input.GetKeyDown(KeyCode.DownArrow)){
-			if (!pressed[0] && !pressed[1] && !pressed[2] && !pressed[3]) 
-				startime = Time.time;
-			pressed[1] = true;
-		}
-		if (Input.GetKeyDown(KeyCode.UpArrow)){
-			if (!pressed[0] && !pressed[1] && !pressed[2] && !pressed[3]) 
-				startime = Time.time;
-			pressed[2] = true;
-		}
-		if (Input.GetKeyDown(KeyCode.RightArrow)){
-			if (!pressed[0] && !pressed[1] && !pressed[2] && !pressed[3]) 
-				startime = Time.time;
-			pressed[3] = true;
-		}
+            if (playerIndex == 1) {
+                if (Input.GetKeyDown(KeyCode.LeftArrow)) {
+                    if (!pressed[0] && !pressed[1] && !pressed[2] && !pressed[3])
+                        startime = Time.time;
+                    pressed[0] = true;
+                }
+                if (Input.GetKeyDown(KeyCode.DownArrow)) {
+                    if (!pressed[0] && !pressed[1] && !pressed[2] && !pressed[3])
+                        startime = Time.time;
+                    pressed[1] = true;
+                }
+                if (Input.GetKeyDown(KeyCode.UpArrow)) {
+                    if (!pressed[0] && !pressed[1] && !pressed[2] && !pressed[3])
+                        startime = Time.time;
+                    pressed[2] = true;
+                }
+                if (Input.GetKeyDown(KeyCode.RightArrow)) {
+                    if (!pressed[0] && !pressed[1] && !pressed[2] && !pressed[3])
+                        startime = Time.time;
+                    pressed[3] = true;
+                }
+            } else {
+                if (Input.GetKeyDown(KeyCode.A)) {
+                    if (!pressed[0] && !pressed[1] && !pressed[2] && !pressed[3])
+                        startime = Time.time;
+                    pressed[0] = true;
+                }
+                if (Input.GetKeyDown(KeyCode.S)) {
+                    if (!pressed[0] && !pressed[1] && !pressed[2] && !pressed[3])
+                        startime = Time.time;
+                    pressed[1] = true;
+                }
+                if (Input.GetKeyDown(KeyCode.W)) {
+                    if (!pressed[0] && !pressed[1] && !pressed[2] && !pressed[3])
+                        startime = Time.time;
+                    pressed[2] = true;
+                }
+                if (Input.GetKeyDown(KeyCode.D)) {
+                    if (!pressed[0] && !pressed[1] && !pressed[2] && !pressed[3])
+                        startime = Time.time;
+                    pressed[3] = true;
+                }
+            }
+        }
+     
 
 		if ((Time.time - startime <= tolerance) && (pressed[0] || pressed[1] || pressed[2] || pressed[3])){
 			string aux = "";
@@ -66,11 +91,11 @@ public class Note_Receptor : MonoBehaviour {
 	public void Check_Notes(string notes){
 		if(spawn.blocks[0].notes == notes){
 			float distance = Mathf.Abs(spawn.blocks[0].transform.position.y - this.transform.position.y);
-			Debug.Log(distance);
+			//Debug.Log(distance);
 			if(distance < okRange){
-				if(distance < perfectRange) spawn.score += 3;
-				else if(distance < goodRange) spawn.score += 2;
-				else spawn.score += 1;	
+				if(distance < perfectRange) spawn.score += 300;
+				else if(distance < goodRange) spawn.score += 200;
+				else spawn.score += 100;	
 
 				Destroy(spawn.blocks[0].gameObject);
 				spawn.blocks.RemoveAt(0);

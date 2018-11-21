@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Note_Spawner : MonoBehaviour {
 
@@ -10,17 +11,20 @@ public class Note_Spawner : MonoBehaviour {
 	public Vector3 finalPos;
 	public GameObject nbPrefab;
 	public List<Note_Block> blocks;
+    public Text scoretxt;
+    public int victories;
 	//int score e bool canplay;
 
 	// Use this for initialization
 	void Start () {
 		blocks = new List<Note_Block>();
 		Rhythm_Manager.instance.offset -= Time.deltaTime * (this.transform.position.y - finalPos.y) / speed;
+        victories = 0;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-	
+        scoretxt.text = "Score: " + score.ToString();
 	}
 
 	public void ChangeStep(){
