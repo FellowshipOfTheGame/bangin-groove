@@ -18,7 +18,7 @@ public class Note_Spawner : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		blocks = new List<Note_Block>();
-		Rhythm_Manager.instance.offset -= Time.deltaTime * (this.transform.position.y - finalPos.y) / speed;
+		Rhythm_Manager.instance.offset -= (this.transform.position.y - finalPos.y) / speed;
         victories = 0;
 	}
 	
@@ -39,7 +39,7 @@ public class Note_Spawner : MonoBehaviour {
 
 	string RandomNote(){
 		string notes = string.Empty;
-		int aux = Random.Range(1, 7);	
+		int aux = Random.Range(1, 4);	
 			switch (aux){
 				case 1:
 					if(notes != "L") notes+="L";
@@ -56,9 +56,9 @@ public class Note_Spawner : MonoBehaviour {
 
 			}
 		if (aux > 4)
-			aux = Random.Range(1, 7);
+			aux = Random.Range(1, 10);
 		else
-			aux = Random.Range(aux + 1, 7);
+			aux = Random.Range(aux + 1, 10);
 
 		switch (aux){
 				case 1:

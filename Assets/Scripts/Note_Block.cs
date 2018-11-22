@@ -16,7 +16,7 @@ public class Note_Block : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		this.transform.position += Vector3.down * speed;
+		this.transform.position += Vector3.down * speed * Time.deltaTime;
 	}
 
 	public void Build(string notes){

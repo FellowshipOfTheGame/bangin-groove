@@ -888,7 +888,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &374943690
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1101,7 +1101,7 @@ MonoBehaviour:
   okRange: 1
   goodRange: 0.7
   perfectRange: 0.5
-  playerIndex: 1
+  playerIndex: 0
 --- !u!212 &419999300
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1875,7 +1875,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a843b0e9f63c4148b714aa45553dd83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.2
+  speed: 5
   score: 0
   finalPos: {x: 0, y: 0, z: 0}
   nbPrefab: {fileID: 1551652918671074, guid: f0c3d95424060994ebe01821239e9252, type: 2}
@@ -2078,7 +2078,7 @@ MonoBehaviour:
   okRange: 1
   goodRange: 0.7
   perfectRange: 0.5
-  playerIndex: 2
+  playerIndex: 1
 --- !u!1 &994818132
 GameObject:
   m_ObjectHideFlags: 0
@@ -2565,7 +2565,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a843b0e9f63c4148b714aa45553dd83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.2
+  speed: 5
   score: 0
   finalPos: {x: 0, y: 0, z: 0}
   nbPrefab: {fileID: 1551652918671074, guid: f0c3d95424060994ebe01821239e9252, type: 2}
@@ -2983,11 +2983,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bpm: 120
-  offset: 6.25
+  offset: 8.25
   source: {fileID: 1432919499}
   counter: {fileID: 159330602}
-  songSize: 26
-  halfSize: 10
+  songSize: 470
+  halfSize: 224
   halfGap: 6
   instructionScreen: {fileID: 647206298}
   middleScreen: {fileID: 137220002}

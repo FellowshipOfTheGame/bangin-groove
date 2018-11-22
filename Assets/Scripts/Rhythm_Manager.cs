@@ -75,22 +75,19 @@ public class Rhythm_Manager : MonoBehaviour {
         if (halfSize == count && round == 1) {
             canSpawn = false;
             round++;
-            Invoke("Pause", 2.8f);
+            Debug.Log("Pause " + Time.time.ToString());
+            Invoke("Pause", 3.5f);
         }
         if (songSize == count && round == 2) {
-            if (spawners[0].score > spawners[1].score) spawners[0].victories++;
-            else if (spawners[0].score < spawners[1].score) spawners[1].victories++;
-            else{
-                spawners[0].victories++;
-                spawners[1].victories++;
-            }
             canSpawn = false;
             round++;
-            Invoke("FinalScreen", 2.8f);
+            CancelInvoke();
+            Invoke("FinalScreen", 3.5f);
         }
 	}
 
     void Continue () {
+        Debug.Log("Continue " + Time.time.ToString());
         canSpawn = true;
         spawners[0].score = 0;
         spawners[1].score = 0;
@@ -111,7 +108,7 @@ public class Rhythm_Manager : MonoBehaviour {
             middleText.text = "No winners in the first round ";
         }
         Debug.Log(spawners[0].victories + " X " + spawners[1].victories);
-        Invoke("ReCount", halfGap * crotchet - 3.0f + Time.deltaTime * (spawners[0].transform.position.y - spawners[0].finalPos.y) / spawners[0].speed);
+        Invoke("ReCount", halfGap * crotchet - 3.0f + (spawners[0].transform.position.y - spawners[0].finalPos.y) / spawners[0].speed);
         Invoke("Continue", halfGap * crotchet);
     }
 
@@ -123,6 +120,12 @@ public class Rhythm_Manager : MonoBehaviour {
     }
 
     void FinalScreen() {
+        if (spawners[0].score > spawners[1].score) spawners[0].victories++;
+            else if (spawners[0].score < spawners[1].score) spawners[1].victories++;
+            else{
+                spawners[0].victories++;
+                spawners[1].victories++;
+            }
         Debug.Log(spawners[0].victories + " X " + spawners[1].victories);
         if (spawners[0].victories > spawners[1].victories) {
             victoryScreen.SetActive(true);
