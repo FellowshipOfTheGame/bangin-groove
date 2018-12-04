@@ -888,7 +888,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &374943690
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -902,9 +902,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeLimit: 10
   clickLimit: 50
-  marks:
-  - {fileID: 261424922}
-  - {fileID: 1357729195}
   arrows:
   - {fileID: 21300000, guid: 457023076486f4e4e814ab8d0b0ead5a, type: 3}
   - {fileID: 21300002, guid: 457023076486f4e4e814ab8d0b0ead5a, type: 3}
@@ -915,8 +912,12 @@ MonoBehaviour:
   - {fileID: 731088863}
   - {fileID: 303708241}
   - {fileID: 479935212}
-  victoryScreen: {fileID: 137220002}
+  marks:
+  - {fileID: 261424922}
+  - {fileID: 1357729195}
+  barr: {fileID: 854981115}
   hits: {fileID: 1200129569}
+  victoryScreen: {fileID: 1915363780}
   victoryText: {fileID: 2042460876}
 --- !u!4 &374943691
 Transform:
@@ -1097,11 +1098,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
-  tolerance: 0.5
+  tolerance: 0.7
   okRange: 1
   goodRange: 0.7
   perfectRange: 0.5
   playerIndex: 0
+  rank: {fileID: 0}
 --- !u!212 &419999300
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1138,11 +1140,11 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Color: {r: 0.98567903, g: 0.3915094, b: 1, a: 1}
+  m_Color: {r: 0.5036668, g: 0.28595588, b: 0.509434, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 1
-  m_Size: {x: 4, y: 0.16}
+  m_Size: {x: 7.3, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -1811,6 +1813,7 @@ GameObject:
   - component: {fileID: 979313651}
   - component: {fileID: 979313650}
   - component: {fileID: 979313649}
+  - component: {fileID: 979313652}
   m_Layer: 0
   m_Name: Spawner2
   m_TagString: Untagged
@@ -1876,12 +1879,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
-  score: 0
-  finalPos: {x: 0, y: 0, z: 0}
   nbPrefab: {fileID: 1551652918671074, guid: f0c3d95424060994ebe01821239e9252, type: 2}
+  score: 0
+  victories: 0
   blocks: []
   scoretxt: {fileID: 1610891308}
-  victories: 0
 --- !u!4 &979313651
 Transform:
   m_ObjectHideFlags: 0
@@ -1896,6 +1898,17 @@ Transform:
   m_Father: {fileID: 1515369766}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &979313652
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 979313648}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f56a72118a9eb048a4434348e00917d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &984618854
 GameObject:
   m_ObjectHideFlags: 0
@@ -2074,11 +2087,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
-  tolerance: 0.5
+  tolerance: 0.7
   okRange: 1
   goodRange: 0.7
   perfectRange: 0.5
   playerIndex: 1
+  rank: {fileID: 0}
 --- !u!1 &994818132
 GameObject:
   m_ObjectHideFlags: 0
@@ -2547,6 +2561,7 @@ GameObject:
   - component: {fileID: 1254607945}
   - component: {fileID: 1254607944}
   - component: {fileID: 1254607946}
+  - component: {fileID: 1254607947}
   m_Layer: 0
   m_Name: Spawner1
   m_TagString: Untagged
@@ -2566,12 +2581,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
-  score: 0
-  finalPos: {x: 0, y: 0, z: 0}
   nbPrefab: {fileID: 1551652918671074, guid: f0c3d95424060994ebe01821239e9252, type: 2}
+  score: 0
+  victories: 0
   blocks: []
   scoretxt: {fileID: 1082248077}
-  victories: 0
 --- !u!4 &1254607945
 Transform:
   m_ObjectHideFlags: 0
@@ -2632,6 +2646,17 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1254607947
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1254607943}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f56a72118a9eb048a4434348e00917d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1275718592
 GameObject:
   m_ObjectHideFlags: 0
@@ -2964,6 +2989,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1515369766}
   - component: {fileID: 1515369765}
+  - component: {fileID: 1515369767}
   m_Layer: 0
   m_Name: RhythmManager
   m_TagString: Untagged
@@ -2982,25 +3008,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3a0c59aac5a9904398ff2daa5670912, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bpm: 120
-  offset: 8.25
-  source: {fileID: 1432919499}
-  counter: {fileID: 159330602}
-  songSize: 470
-  halfSize: 224
-  halfGap: 6
+  music: {fileID: 11400000, guid: 98c927ded4ae63645b032ef0314dacbb, type: 2}
+  pauseDelay: 3.5
+  finalDelay: 10
+  spawners:
+  - {fileID: 1254607944}
+  - {fileID: 979313650}
   instructionScreen: {fileID: 647206298}
   middleScreen: {fileID: 137220002}
   suddenScreen: {fileID: 680268466}
   victoryScreen: {fileID: 1915363780}
-  rhythmMusic: {fileID: 8300000, guid: 83732747d13cb1f4f91f2815045ad8fe, type: 3}
-  mashMusic: {fileID: 0}
   middleText: {fileID: 1216966395}
   victoryText: {fileID: 2042460876}
-  mash: {fileID: 374943690}
-  spawners:
-  - {fileID: 1254607944}
-  - {fileID: 979313650}
+  counter: {fileID: 159330602}
 --- !u!4 &1515369766
 Transform:
   m_ObjectHideFlags: 0
@@ -3016,6 +3036,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1515369767
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1515369764}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2557be414e9e94d45a3cd37fa92d2d90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bpm: 0
+  offset: 0
+  source: {fileID: 1432919499}
+  rhythmMusic: {fileID: 0}
 --- !u!1 &1587876670
 GameObject:
   m_ObjectHideFlags: 0

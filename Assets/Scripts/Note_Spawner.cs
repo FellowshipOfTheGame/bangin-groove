@@ -5,77 +5,48 @@ using UnityEngine.UI;
 
 public class Note_Spawner : MonoBehaviour {
 
-	//public Music music;
-	public float speed;
-	public int score;
-	public Vector3 finalPos;
-	public GameObject nbPrefab;
-	public List<Note_Block> blocks;
-    public Text scoretxt;
-    public int victories;
-	//int score e bool canplay;
+	int count = 0; //control counter
 
-	// Use this for initialization
+	public float speed; //the speed of each note
+	public GameObject nbPrefab; //the prefab of an note block
+
+	[HideInInspector] public int score; //player score count
+	[HideInInspector] public int victories; //player victory count
+	[HideInInspector] public List<Note_Block> blocks; //spawned block list
+
+	[Space(5)]
+	public Text scoretxt; //the score text on canvas
+    
+	RandomNotes rand = null; //randomize script
+
 	void Start () {
+		//initialize everything
 		blocks = new List<Note_Block>();
-		Rhythm_Manager.instance.offset -= (this.transform.position.y - finalPos.y) / speed;
         victories = 0;
+		rand = this.GetComponent<RandomNotes>();
+	}
+
+	public float getOffset(){
+		//calculate note travel delay
+		return (this.transform.position.y - this.transform.GetChild(0).position.y) / speed;
 	}
 	
-	// Update is called once per frame
 	void Update () {
-        scoretxt.text = "Score: " + score.ToString();
+        scoretxt.text = "Score: " + score.ToString(); //show score on screen
 	}
 
 	public void ChangeStep(){
-		string notes = RandomNote();
-		if (notes != string.Empty){
-			Note_Block nb = Instantiate(nbPrefab).GetComponent<Note_Block>();
-			nb.Build(notes);
-			nb.transform.position = this.transform.position;
-			blocks.Add(nb);
-		}
-	}
-
-	string RandomNote(){
-		string notes = string.Empty;
-		int aux = Random.Range(1, 4);	
-			switch (aux){
-				case 1:
-					if(notes != "L") notes+="L";
-					break;
-				case 2:
-					if(notes != "D") notes+="D";
-					break;
-				case 3:
-					if(notes != "U") notes+="U";
-					break;
-				case 4:
-					if(notes != "R") notes+="R";
-					break;
-
-			}
-		if (aux > 4)
-			aux = Random.Range(1, 10);
+		string notes;
+		if (rand != null) //if random notes script exists, use it
+			notes = rand.generate();
 		else
-			aux = Random.Range(aux + 1, 10);
+			notes = Rhythm_Manager.instance.music.notes[count]; //get next note ot the song
 
-		switch (aux){
-				case 1:
-					if(notes != "L") notes+="L";
-					break;
-				case 2:
-					if(notes != "D") notes+="D";
-					break;
-				case 3:
-					if(notes != "U") notes+="U";
-					break;
-				case 4:
-					if(notes != "R") notes+="R";
-					break;
-
-			}
-		
-		return notes;
+		if (notes != string.Empty){ //empty blocks are useless
+			Note_Block nb = Instantiate(nbPrefab).GetComponent<Note_Block>();
+			nb.Build(notes); //initialize block with the right notes
+			nb.transform.position = this.transform.position;
+			blocks.Add(nb); //add new block on the list
+		}
 	}
 }

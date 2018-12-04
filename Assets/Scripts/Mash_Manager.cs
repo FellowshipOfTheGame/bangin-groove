@@ -5,81 +5,98 @@ using UnityEngine.UI;
 
 public class Mash_Manager : MonoBehaviour {
 
-    int[] counts;
-    public float timeLimit;
-    float timeStart;
-    public int clickLimit;
-    public Transform[] marks;
-    int testkey;
-    KeyCode[] keys;
+    public static Mash_Manager instance; //singleton
 
-    public Sprite[] arrows;
-    public Image[] notes;
+    bool mash = false; //control boolean
+    float initialDistance; //space reference
+    float timeStart; //time reference
 
-    public GameObject victoryScreen, hits;
-    public Text victoryText;
+    public float timeLimit; //max time of button mash
+    public int clickLimit; //max number of clicks
 
-    float initialDistance;
-    bool end = true;
-    //Keycode key;
-    //public Animator[] players;
+    int[] counts; //the counters of each player in button mash
+    KeyCode[] keys; //the key that each playern needs to press
+    
+    [Space(5)]
+    public Sprite[] arrows; //all arrow sprites
 
-    // Use this for initialization
-    void Start () {
-        counts = new int[2];
-        initialDistance = marks[1].position.x;
-        //Initialize();
+    [Space(5)]
+    public Image[] notes; //the notes representation on canvas
+    public Transform[] marks; //marks of each player in the barr
+    public GameObject barr; //the barr
+    public GameObject hits; //the animations who indicate which button to press
+    public GameObject victoryScreen; //the victory pop up
+    public Text victoryText; //that tells who won
+
+    void Awake(){
+        //singeton process
+		if (instance == null)
+			instance = this;
+		else
+			Destroy(this.gameObject);
+		
+        barr.SetActive(false); //hide barr
 	}
-	
-	// Update is called once per frame
-	void Update () {
-        if (!end) {
-            if (Input.GetKeyDown(keys[0])) {
-                counts[0]++;
-                marks[0].position += (initialDistance / clickLimit) * Vector3.right;
-            }
-            if (Input.GetKeyDown(keys[1])) {
-                counts[1]++;
-                marks[1].position += (initialDistance / clickLimit) * Vector3.left;
-            }
-
-            if (Time.time - timeStart >= timeLimit || counts[0] >= clickLimit || counts[1] >= clickLimit) {
-                victoryScreen.SetActive(true);
-                hits.SetActive(false);
-                end = true;
-                if (counts[0] > counts[1]) {
-                    victoryText.text = "Player 1 wins";
-                } else if (counts[0] < counts[1]) {
-                    victoryText.text = "Player 2 wins";
-                }
-            }
-        }
-    }
-
+    //when the Mash Manager is called
     public void Initialize () {
-        hits.SetActive(true);
+        counts = new int[2]; //initialize counters to zero
+        initialDistance = marks[1].position.x; //get mark initial position
+        hits.SetActive(true); //show indicators
+        //sort key to use
         keys = new KeyCode[2];
-        testkey = Random.Range(1, 4);
-        if(testkey == 1) {
-            keys[0] = KeyCode.LeftArrow;
-            keys[1] = KeyCode.A;
+        int testkey = Random.Range(1, 4);
+        switch (testkey){
+            case 1: //use left key
+                keys[0] = KeyCode.LeftArrow;
+                keys[1] = KeyCode.A;
+                break;
+            case 2: //use down key
+                keys[0] = KeyCode.DownArrow;
+                keys[1] = KeyCode.S;
+                break;
+            case 3: //use up key
+                keys[0] = KeyCode.UpArrow;
+                keys[1] = KeyCode.W;
+                break;
+            case 4: //use right key
+                keys[0] = KeyCode.RightArrow;
+                keys[1] = KeyCode.D;
+                break;
         }
-        else if (testkey == 2) {
-            keys[0] = KeyCode.DownArrow;
-            keys[1] = KeyCode.S;
-        }
-        else if (testkey == 3) {
-            keys[0] = KeyCode.UpArrow;
-            keys[1] = KeyCode.W;
-        }
-        else if (testkey == 4) {
-            keys[0] = KeyCode.RightArrow;
-            keys[1] = KeyCode.D;
-        }
+        //make choose key appear on indicators
         foreach(Image note in notes){
             note.sprite = arrows[testkey - 1];
         }
-        end = false;
-        timeStart = Time.time;
+
+        mash = true; //start mash
+        timeStart = Time.time; //set time reference
+        barr.SetActive(true); //show the barr
+    }
+
+	void Update () {
+        //if button mash is enabled
+        if (mash) {
+            //if player 1 pressed the button
+            if (Input.GetKeyDown(keys[0])) {
+                counts[0]++;
+                marks[0].position += (initialDistance / clickLimit) * Vector3.right; //move player1's mark to center
+            }
+            //if player 2 pressed the button
+            if (Input.GetKeyDown(keys[1])) {
+                counts[1]++;
+                marks[1].position += (initialDistance / clickLimit) * Vector3.left; //move player2's mark to center
+            }
+            //on time's up or if one player hit the goal
+            if (Time.time - timeStart >= timeLimit || counts[0] >= clickLimit || counts[1] >= clickLimit) {
+                victoryScreen.SetActive(true); //show victory pop up
+                hits.SetActive(false); //hide the indicators
+                mash = false; //stop button mash
+                //check winners
+                if (counts[0] > counts[1])
+                    victoryText.text = "Player 1 wins";
+                else if (counts[0] < counts[1])
+                    victoryText.text = "Player 2 wins";
+            }
+        }
     }
 }
