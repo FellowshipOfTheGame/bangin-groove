@@ -56,7 +56,7 @@ public class Rhythm_Manager : MonoBehaviour {
         //wake up the the spawners
         if (canSpawn){
             foreach (Note_Spawner ns in spawners)
-                ns.ChangeStep(); //spawn notes
+                ns.ChangeStep(count); //spawn notes
         }
         //check end of round 1
         if (music.halfSize == count && round == 1) {

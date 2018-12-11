@@ -23,4 +23,8 @@ public class Game_Manager : MonoBehaviour {
 	void Update () {
 		
 	}
+
+	public void Quit(){
+		Application.Quit();
+	}
 }

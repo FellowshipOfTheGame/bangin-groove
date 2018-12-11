@@ -5,8 +5,12 @@ using UnityEngine.UI;
 
 public class Note_Spawner : MonoBehaviour {
 
-	int count = 0; //control counter
+    public int playerIndex;
 
+    int count = 0; //control counter
+	string[] sequel;
+
+	[Space(5)]
 	public float speed; //the speed of each note
 	public GameObject nbPrefab; //the prefab of an note block
 
@@ -24,6 +28,7 @@ public class Note_Spawner : MonoBehaviour {
 		blocks = new List<Note_Block>();
         victories = 0;
 		rand = this.GetComponent<RandomNotes>();
+		sequel = Rhythm_Manager.instance.music.notes;
 	}
 
 	public float getOffset(){
@@ -35,18 +40,39 @@ public class Note_Spawner : MonoBehaviour {
         scoretxt.text = "Score: " + score.ToString(); //show score on screen
 	}
 
-	public void ChangeStep(){
-		string notes;
+	public void ChangeStep(int count){
+		string notes = string.Empty;
 		if (rand != null) //if random notes script exists, use it
 			notes = rand.generate();
-		else
-			notes = Rhythm_Manager.instance.music.notes[count]; //get next note ot the song
+		else if (count < sequel.Length){
+			notes = sequel[count]; //get next note ot the song
 
-		if (notes != string.Empty){ //empty blocks are useless
+			//notation:	xL_R-> L for player 1 and R for player 2
+			//			1L-> just L for player 1
+			//			2R-> just R for player 2
+			//			LR-> LR for both
+			if(notes != string.Empty){
+                if (notes[0] == 'x'){ //if we have different notes for each of them
+                    if (playerIndex == 0)
+                        notes = notes.Substring(1, notes.IndexOf('_') - 1);
+                    else
+                        notes = notes.Substring(notes.IndexOf('_') + 1, notes.Length - notes.IndexOf('_') - 1);
+                }
+                if ((notes[0] == (playerIndex + 1).ToString()[0])){ //if is just to this guy
+                    notes = notes.Substring(1, notes.Length - 1);
+                }
+                if ((notes[0] == (2 - playerIndex).ToString()[0])){ //if is just to the other guy
+                    notes = string.Empty;
+                }
+			}
+
+		}
+		if (notes != string.Empty && notes[0] != '-'){ //empty blocks are useless
 			Note_Block nb = Instantiate(nbPrefab).GetComponent<Note_Block>();
 			nb.Build(notes); //initialize block with the right notes
 			nb.transform.position = this.transform.position;
 			blocks.Add(nb); //add new block on the list
 		}
+		count++;
 	}
 }

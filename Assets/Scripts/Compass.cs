@@ -14,6 +14,8 @@ public class Compass : MonoBehaviour {
 	public AudioSource source;
 	public AudioClip rhythmMusic;
 
+	public int forward;
+
 	public delegate void Step(int counter);
 	public Step step;
 
@@ -31,7 +33,10 @@ public class Compass : MonoBehaviour {
 	public void Play(){
         initialPos = (float)(AudioSettings.dspTime) * source.pitch + offset;
         counting = true;
-        source.PlayOneShot(rhythmMusic);
+		
+		source.clip = rhythmMusic;
+		source.time = forward * crotchet;
+        source.Play();
     }
 
 	// Update is called once per frame
@@ -40,7 +45,7 @@ public class Compass : MonoBehaviour {
             songPos = (float)(AudioSettings.dspTime) * source.pitch - initialPos;
 
             if (songPos >= count * crotchet)
-                step(count - 1);
+                step(count - 1 + forward);
         }
 	}
 }
