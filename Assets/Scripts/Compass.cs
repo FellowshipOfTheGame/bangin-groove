@@ -5,9 +5,9 @@ using UnityEngine;
 public class Compass : MonoBehaviour {
 
 
-	public float bpm;
+	float bpm;
 	int count = 1;
-	public float offset;
+	float offset;
 	float crotchet;
 	float songPos, initialPos;
 	bool counting = false;

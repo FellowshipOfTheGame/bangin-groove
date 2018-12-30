@@ -13,7 +13,6 @@ public class Rhythm_Manager : MonoBehaviour {
     Compass compass; //step controller
 
     public Music music; //chosen music
-    public float pauseDelay, finalDelay; //delay to call pop ups
 
     [Space(5)]
     public Note_Spawner[] spawners; //players 1 and 2
@@ -30,18 +29,23 @@ public class Rhythm_Manager : MonoBehaviour {
 		else
 			Destroy(this.gameObject);
 		
-        //setiting compass
-        compass = this.GetComponent<Compass>();
-        compass.Initialize(music, spawners[0].getOffset()); //set compass to follow the music
-        compass.step += CallSpawn; //synchronize spawn in compass
-        round = 1;
-
         //control pop ups
         instructionScreen.SetActive(true); //initial pop up
         middleScreen.SetActive(false);
         suddenScreen.SetActive(false);
         victoryScreen.SetActive(false);
+
+        if(music != null)
+            Initialize(music);
 	}
+
+    public void Initialize(Music music){
+        //setiting compass
+        compass = this.GetComponent<Compass>();
+        compass.Initialize(music, spawners[0].getOffset()); //set compass to follow the music
+        compass.step += CallSpawn; //synchronize spawn in compass
+        round = 1;
+    }
 
     //start to dance!
     public void Play(){
