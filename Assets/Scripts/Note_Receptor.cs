@@ -12,8 +12,7 @@ public class Note_Receptor : MonoBehaviour {
 	public float perfectRange; //mas distance to a perfect hit
 
     [Space(5)]
-    float tolerance; //time tolerance to press notes together
-    public float pressTolerance, releaseTolerance;
+    public float tolerance; //time tolerance to press notes together
 
 	Note_Spawner spawn; //the relative spawn of the receptor
 	float startime; //time reference
@@ -21,8 +20,10 @@ public class Note_Receptor : MonoBehaviour {
 	bool[] pressed; //the registers who stores what keys enter on input
     KeyCode[] keys; //the keys chosen for the notes
 
+    bool inRange = false; //if note is in range
+    int hitCount = 0; //how many notes from the block the player hit
+
 	void Start () {
-        tolerance = pressTolerance;
 		pressed = new bool[4]; //set key registers to false
 		spawn = this.transform.parent.GetComponent<Note_Spawner>();
         playerIndex = spawn.playerIndex; //to know which player is this guy
@@ -34,64 +35,115 @@ public class Note_Receptor : MonoBehaviour {
 
 	}
 
-	void Update () {
+    void Sync_Range(){
         //if we have blocks to hit
 		if (spawn.blocks.Count > 0){
-            //if current note is going away out of range
-			if(spawn.blocks[0].transform.position.y <= this.transform.position.y - okRange){ 
-				Destroy(spawn.blocks[0].gameObject);
-				spawn.blocks.RemoveAt(0);
+            //if current note is in range
+            if(spawn.blocks[0].transform.position.y >= this.transform.position.y - okRange &&
+                                spawn.blocks[0].transform.position.y <= this.transform.position.y + okRange){
+                inRange = true;
+            
+			}else{
+                inRange = false;
+                //if current note is going away
+                if(spawn.blocks[0].transform.position.y <= this.transform.position.y - okRange){
+                    spawn.blocks[0].Destroy();
+                    spawn.blocks.RemoveAt(0);
+                    Miss();
+                }
 			}
-        }
-        //check all keys pressed
-        for(int i = 0; i < 4; i++){
-            if (Input.GetKeyDown(keys[i])) {
-                if (!pressed[0] && !pressed[1] && !pressed[2] && !pressed[3]) //if no keys are pressed yet
-                    startime = Time.time; //set time reference
-                pressed[i] = true;
+        }else
+            inRange = false;
+    }
+
+	void Update () {
+        Sync_Range();
+
+        if (inRange){
+            //check all keys pressed
+            for(int i = 0; i < 4; i++){
+                if (Input.GetKeyDown(keys[i])) {
+                    if(Have_Note(i)){
+                        if (!pressed[0] && !pressed[1] && !pressed[2] && !pressed[3]) //if no keys are pressed yet
+                            startime = Time.time; //set time reference
+                        pressed[i] = true;
+                        hitCount++;
+                    }else
+                        Miss();
+                }
             }
+            //if tolerance time's up
+            if ((Time.time - startime >= tolerance) && (pressed[0] || pressed[1] || pressed[2] || pressed[3]))
+                Miss();
+            //it the player got all the notes of the block
+            if(hitCount == spawn.blocks[0].notes.Length)
+                Hit();
+
+        }else{
+            //check all keys pressed
+            for(int i = 0; i < 4; i++){
+                if (Input.GetKeyDown(keys[i]))
+                    pressed[i] = true;
+            }
+            //if any key is pressed the player fail
+            if(pressed[0] || pressed[1] || pressed[2] || pressed[3])
+                Miss();
         }
-        //check all keys released
-        for(int i = 0; i < 4; i++){
-            if (Input.GetKeyUp(keys[i]))
-                tolerance = releaseTolerance;
-        }
-        //if tolerance time's up
-        if ((Time.time - startime <= tolerance) && (pressed[0] || pressed[1] || pressed[2] || pressed[3]))
-			Check_Notes();
-        
 	}
 
+    void Miss(){
+        Debug.Log("missed");
 
-	public void Check_Notes(){
-        if(spawn.blocks.Count > 0){
-            //build input code
-            string aux = "";
-		    if (pressed[0])aux += 'L';
-		    if (pressed[1]) aux += 'D';
-		    if (pressed[2]) aux += 'U';
-		    if (pressed[3]) aux += 'R';
-            //if the code is right
-		    if(spawn.blocks[0].notes == aux){
-                //calculate points by distance
-			    float distance = Mathf.Abs(spawn.blocks[0].transform.position.y - this.transform.position.y);
+        Reset();
+    }
 
-			    if(distance < okRange){
-				    if(distance < perfectRange)
-                        spawn.score += 300; //perfect score
-                    else if(distance < goodRange)
-                        spawn.score += 200; //good score
-                    else 
-                        spawn.score += 100; //default score
-                    
-				    Destroy(spawn.blocks[0].gameObject);
-				    spawn.blocks.RemoveAt(0);
-			    }
-		    }
+    void Hit(){
+        //calculate points by distance
+		float distance = Mathf.Abs(spawn.blocks[0].transform.position.y - this.transform.position.y);
+
+		if(distance < okRange){
+			if(distance < perfectRange){
+                spawn.score += 300; //perfect score
+                spawn.blocks[0].HitBlock(3);
+            }else if(distance < goodRange){
+                spawn.score += 200; //good score
+                spawn.blocks[0].HitBlock(2);
+            }else {
+                spawn.score += 100; //default score
+                spawn.blocks[0].HitBlock(1);
+            } 
+
+			spawn.blocks.RemoveAt(0);
+		}
+
+        Reset();
+    }
+
+    bool Have_Note(int i){
+        switch (i){
+            case 0:
+                return spawn.blocks[0].notes.Contains("L");
+                break;
+            case 1:
+                return spawn.blocks[0].notes.Contains("D");
+                break;
+            case 2:
+                return spawn.blocks[0].notes.Contains("U");
+                break;
+            case 3:
+                return spawn.blocks[0].notes.Contains("R");
+                break;
+            default:
+                return false;
+                break;
         }
-        tolerance = pressTolerance;
+    }
+
+	void Reset(){
+        hitCount = 0;
         //reset button registers
         for(int i=0; i<4; i++)
             pressed[i] = false;
+        
 	}
 }

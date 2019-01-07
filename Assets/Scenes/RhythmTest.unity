@@ -829,7 +829,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 222717758}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -15, z: 0}
+  m_LocalPosition: {x: 0, y: -14.01, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 444264848}
@@ -899,8 +899,7 @@ MonoBehaviour:
   okRange: 0.8
   goodRange: 0.4
   perfectRange: 0.2
-  pressTolerance: 0.7
-  releaseTolerance: 0.2
+  tolerance: 0.5
 --- !u!1 &232979545
 GameObject:
   m_ObjectHideFlags: 0
@@ -1328,7 +1327,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 419999297}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -15, z: 0}
+  m_LocalPosition: {x: 0, y: -14.01, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1817329407}
@@ -1352,8 +1351,7 @@ MonoBehaviour:
   okRange: 0.8
   goodRange: 0.4
   perfectRange: 0.2
-  pressTolerance: 0.7
-  releaseTolerance: 0.2
+  tolerance: 0.5
 --- !u!212 &419999300
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3641,8 +3639,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   music: {fileID: 11400000, guid: 98c927ded4ae63645b032ef0314dacbb, type: 2}
-  pauseDelay: 3.5
-  finalDelay: 10
   spawners:
   - {fileID: 1254607944}
   - {fileID: 979313650}
@@ -3679,8 +3675,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2557be414e9e94d45a3cd37fa92d2d90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bpm: 0
-  offset: 0
   source: {fileID: 1432919499}
   rhythmMusic: {fileID: 0}
   forward: 0

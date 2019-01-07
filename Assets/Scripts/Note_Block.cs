@@ -9,6 +9,8 @@ public class Note_Block : MonoBehaviour {
 	public GameObject notePrefab; //an prefab of the note
 	float speed; //the speed of the block
 
+	List<Note> myNotes;
+
 	void Start () {
 		speed = Rhythm_Manager.instance.spawners[0].speed; //get oficial speed
 	}
@@ -19,9 +21,12 @@ public class Note_Block : MonoBehaviour {
 	//decrypt note code and add notes to the block
 	public void Build(string notes){
 		this.notes = notes; //store note code
+		myNotes = new List<Note>();
+
 		for(int i=0; i<notes.Length; i++){
 			Note n = Instantiate(notePrefab, this.transform).GetComponent<Note>();
 			n.initialize(notes[i]); //initialize note created
+			myNotes.Add(n);
 			switch (notes[i]){
 				case 'L': //case left
 					n.transform.localPosition = new Vector3(pos[0], 0.0f, 0.0f);
@@ -37,5 +42,22 @@ public class Note_Block : MonoBehaviour {
 					break;
 			}
 		}
+	}
+
+	public void Destroy(){
+		Invoke("Vanish", 0.5f);
+		foreach(Note n in myNotes)
+			n.Erase();
+	}
+
+	public void HitBlock(int rank){
+		speed *= 0.2f;
+		Invoke("Vanish", 0.2f);
+		foreach(Note n in myNotes)
+			n.Touch(rank);
+	}
+
+	void Vanish(){
+		Destroy(this.gameObject);
 	}
 }
