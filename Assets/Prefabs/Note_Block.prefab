@@ -53,8 +53,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   notes: 
   pos:
-  - -3
-  - -1
-  - 1
-  - 3
+  - -2.23
+  - -0.75
+  - 0.75
+  - 2.25
   notePrefab: {fileID: 1876688599930340, guid: 437fb865f2712f24db096cca184373c1, type: 2}

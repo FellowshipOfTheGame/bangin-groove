@@ -10,17 +10,12 @@ public class Rhythm_Manager : MonoBehaviour {
 
     int round; //current round
     bool canSpawn = false, counting = false; //control booleans
-    Compass compass; //step controller
+    public Compass compass; //step controller
 
     public Music music; //chosen music
 
     [Space(5)]
     public Note_Spawner[] spawners; //players 1 and 2
-
-    [Space(5)]
-    public GameObject instructionScreen, middleScreen, suddenScreen, victoryScreen; //screens
-    public Text middleText, victoryText; //they tell who won on screen
-    public Animator counter; //the countdown on the round start
     
 	void Awake(){
         //singleton process
@@ -28,30 +23,25 @@ public class Rhythm_Manager : MonoBehaviour {
 			instance = this;
 		else
 			Destroy(this.gameObject);
-		
-        //control pop ups
-        instructionScreen.SetActive(true); //initial pop up
-        middleScreen.SetActive(false);
-        suddenScreen.SetActive(false);
-        victoryScreen.SetActive(false);
-
-        if(music != null)
-            Initialize(music);
 	}
 
     public void Initialize(Music music){
+        this.music = music;
         //setiting compass
         compass = this.GetComponent<Compass>();
         compass.Initialize(music, spawners[0].getOffset()); //set compass to follow the music
         compass.step += CallSpawn; //synchronize spawn in compass
         round = 1;
+
+        spawners[0].Initialize();
+        spawners[1].Initialize();
     }
 
     //start to dance!
     public void Play(){
-        instructionScreen.SetActive(false); //close pop up
         canSpawn = true; //allow spawners to work
-        counter.SetTrigger("Count"); //countdown
+        Anim_Manager.instance.CountDown(); //countdown
+        Anim_Manager.instance.TurnUp(); //set all start animations
         compass.Play(); //active compass
     }
 
@@ -79,18 +69,18 @@ public class Rhythm_Manager : MonoBehaviour {
     }
     //end round 1
     void Pause() {
-        middleScreen.SetActive(true); //show pop up
+        Anim_Manager.instance.register.StoreScore(1);
         //check winner of the round 1
         if (spawners[0].score > spawners[1].score) {
             spawners[0].victories++;
-            middleText.text = "Player 1 wins the first round";
+            Anim_Manager.instance.ShowVictory(0, spawners[0].victories, false);
         } else if (spawners[0].score < spawners[1].score) {
             spawners[1].victories++;
-            middleText.text = "Player 2 wins the first round ";
+            Anim_Manager.instance.ShowVictory(1, spawners[1].victories, false);
         }else{
             spawners[0].victories++;
             spawners[1].victories++;
-            middleText.text = "No winners in the first round ";
+            Anim_Manager.instance.ShowDraw(spawners[0].victories, spawners[1].victories, false);
         }
         //call the counter and rouns 2 in time
         Invoke("ReCount", music.halfGap * 60.0f / music.bpm - 4.0f);
@@ -98,10 +88,11 @@ public class Rhythm_Manager : MonoBehaviour {
     }
     //reset scores and call the counter
     void ReCount(){
-        middleScreen.SetActive(false); //close pop up
         spawners[0].score = 0;
+        spawners[0].modifier = 1;
         spawners[1].score = 0;
-        counter.SetTrigger("Count"); //countdown
+        spawners[1].modifier = 1;
+        Anim_Manager.instance.CountDown();
     }
     //start round 2
     void Continue () {
@@ -109,36 +100,48 @@ public class Rhythm_Manager : MonoBehaviour {
     }
     //end round 2
     void FinalScreen() {
+        Anim_Manager.instance.register.StoreScore(2);
         //check winner of the round 2
-        if (spawners[0].score > spawners[1].score) spawners[0].victories++;
-            else if (spawners[0].score < spawners[1].score) spawners[1].victories++;
-            else{
-                spawners[0].victories++;
-                spawners[1].victories++;
-            }
+        if (spawners[0].score > spawners[1].score){
+            spawners[0].victories++;
+            Anim_Manager.instance.ShowVictory(0, spawners[0].victories, true);
+        }else if (spawners[0].score < spawners[1].score){ 
+            spawners[1].victories++;
+            Anim_Manager.instance.ShowVictory(1, spawners[1].victories, true);
+        }else{
+            spawners[0].victories++;
+            spawners[1].victories++;
+            Anim_Manager.instance.ShowDraw(spawners[0].victories, spawners[1].victories, true);
+        }
         //calculate winner of the match
         if (spawners[0].victories > spawners[1].victories) {
-            victoryScreen.SetActive(true); //show victory pop up
-            victoryText.text = "Player 1 wins";
+            Anim_Manager.instance.register.SetWinner(0, -1, 0.0f);
+            Anim_Manager.instance.Finish(0);
         } else if (spawners[0].victories < spawners[1].victories) {
-            victoryScreen.SetActive(true); //show victory pop up
-            victoryText.text = "Player 2 wins";
+            Anim_Manager.instance.register.SetWinner(1, -1, 0.0f);
+            Anim_Manager.instance.Finish(1);
         } else {
-            suddenScreen.SetActive(true); //show sudden death pop up
+            Invoke("StartMash", 1.8f); //show sudden death pop up
+            Anim_Manager.instance.ShowRound("SUDDEN DEATH");
         }
     }
     //pass the bomb to Mash Manager
     public void StartMash(){
-        suddenScreen.SetActive(false); //close pop up
         //close spawners
-        spawners[0].gameObject.SetActive(false);
-        spawners[1].gameObject.SetActive(false);
+        //spawners[0].gameObject.SetActive(false);
+        //spawners[1].gameObject.SetActive(false);
         //call Manager
         Mash_Manager.instance.Invoke("Initialize", 3.2f);
-        counter.SetTrigger("Count"); //countdown
+        Anim_Manager.instance.StartMash(3.2f);
+        
+        Anim_Manager.instance.CountDown(); //countdown
     }
     //restart the match
     public void Reset() {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name); //load scene again
+        Game_Manager.instance.Reset(); //load scene again
+    }
+
+    public void Quit(){
+        SceneManager.LoadScene("Menu");
     }
 }

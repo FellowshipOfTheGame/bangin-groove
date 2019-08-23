@@ -1,0 +1,456 @@
+fileFormatVersion: 2
+guid: 82f072682ee3ec44fa9f6d272f3580a9
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: safira_body_0
+    21300002: safira_body_1
+    21300004: safira_body_2
+    21300006: safira_body_3
+    21300008: safira_body_4
+    21300010: safira_body_5
+    21300012: safira_body_6
+    21300014: safira_body_7
+    21300016: safira_body_8
+    21300018: safira_body_9
+    21300020: safira_body_10
+    21300022: safira_body_11
+    21300024: safira_body_12
+    21300026: safira_body_13
+    21300028: safira_body_14
+    21300030: safira_body_15
+    21300032: safira_body_16
+  externalObjects: {}
+  serializedVersion: 7
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: -1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 2
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: safira_body_0
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 887
+        width: 254
+        height: 190
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5131579}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab83747bf44dc024498e949bc3c02354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: safira_body_1
+      rect:
+        serializedVersion: 2
+        x: 457
+        y: 871
+        width: 78
+        height: 168
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef393e162899a6042ae22079fe35d890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: safira_body_2
+      rect:
+        serializedVersion: 2
+        x: 693
+        y: 511
+        width: 161.00006
+        height: 454.00006
+      alignment: 9
+      pivot: {x: 0.49999982, y: 0.49999994}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ffd821d21f6a814cabcb4cec906ed0f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: safira_body_3
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 666
+        width: 78
+        height: 168
+      alignment: 9
+      pivot: {x: 0.5, y: 0.4892858}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ddfbeef55641c74d9e9834914cc4ccd
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: safira_body_4
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 429
+        width: 220
+        height: 456
+      alignment: 9
+      pivot: {x: 0.49999997, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee29dc2c1b72b614a85bf10d33e1652c
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: safira_body_5
+      rect:
+        serializedVersion: 2
+        x: 469
+        y: 624
+        width: 108
+        height: 194
+      alignment: 9
+      pivot: {x: 0.5, y: 0.49999997}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93e6f29c1be8ba1489ca1c85e1d11fb3
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: safira_body_6
+      rect:
+        serializedVersion: 2
+        x: 916
+        y: 630
+        width: 186
+        height: 195
+      alignment: 9
+      pivot: {x: 0.51344085, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0e4297039312494c92ff8ef2e2f2438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: safira_body_7
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 426
+        width: 102
+        height: 193
+      alignment: 9
+      pivot: {x: 0.4754902, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a14db555b1fe9f439b5306f644465cc
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: safira_body_8
+      rect:
+        serializedVersion: 2
+        x: 493
+        y: 466
+        width: 49
+        height: 110
+      alignment: 9
+      pivot: {x: 0.5, y: 0.49999997}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f78eb2a501b2004478f6f0eed657a5f8
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: safira_body_9
+      rect:
+        serializedVersion: 2
+        x: 991
+        y: 458
+        width: 100
+        height: 84
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf42edade15887744ad654f19e79ae2b
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: safira_body_10
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 249
+        width: 50
+        height: 110
+      alignment: 9
+      pivot: {x: 0.5, y: 0.49999997}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53df1f2beb439d54ba8d2db5e9ecfe41
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: safira_body_11
+      rect:
+        serializedVersion: 2
+        x: 187
+        y: 27
+        width: 121
+        height: 303
+      alignment: 9
+      pivot: {x: 0.49999997, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e044f5e69e83e834aa3b840fb64a2cb3
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: safira_body_12
+      rect:
+        serializedVersion: 2
+        x: 357
+        y: 0
+        width: 98
+        height: 367
+      alignment: 9
+      pivot: {x: 0.5, y: 0.493188}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74515602468d581419806d369fbc4c59
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: safira_body_13
+      rect:
+        serializedVersion: 2
+        x: 525
+        y: 1
+        width: 98
+        height: 372
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f34eaaf12d133247a3028587e2faa4b
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: safira_body_14
+      rect:
+        serializedVersion: 2
+        x: 683
+        y: 103
+        width: 121
+        height: 303
+      alignment: 9
+      pivot: {x: 0.49999997, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 852476e114819984c998447cd3281ce0
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: safira_body_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 13
+        width: 106.99999
+        height: 112.00001
+      alignment: 9
+      pivot: {x: 0.49065423, y: 0.49999997}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a820e342825779847853b1d298498d04
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: safira_body_16
+      rect:
+        serializedVersion: 2
+        x: 836
+        y: 4
+        width: 110
+        height: 112
+      alignment: 9
+      pivot: {x: 0.49999997, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82c84f7a87c438a48bdbaf5bc4e21766
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 37b1a508cd50d0d4d88ec8a8cdda582d
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 636880206952307789
+  assetBundleName: 
+  assetBundleVariant: 

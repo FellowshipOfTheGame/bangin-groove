@@ -6,13 +6,14 @@ using UnityEngine.UI;
 public class Note_Spawner : MonoBehaviour {
 
     public int playerIndex;
+	public int modifier; //player modifier count
 
     int count = 0; //control counter
 	string[] sequel;
 
 	[Space(5)]
 	public float speed; //the speed of each note
-	public GameObject nbPrefab; //the prefab of an note block
+	public GameObject nbPrefab; //the prefab of a note block
 
 	[HideInInspector] public int score; //player score count
 	[HideInInspector] public int victories; //player victory count
@@ -20,10 +21,11 @@ public class Note_Spawner : MonoBehaviour {
 
 	[Space(5)]
 	public Text scoretxt; //the score text on canvas
-    
+	public Text modtxt; //the modifier text on canvas
+
 	RandomNotes rand = null; //randomize script
 
-	void Start () {
+	public void Initialize () {
 		//initialize everything
 		blocks = new List<Note_Block>();
         victories = 0;
@@ -37,7 +39,7 @@ public class Note_Spawner : MonoBehaviour {
 	}
 	
 	void Update () {
-        scoretxt.text = "Score: " + score.ToString(); //show score on screen
+        scoretxt.text = score.ToString(); //show score on screen
 	}
 
 	public void ChangeStep(int count){
@@ -75,4 +77,9 @@ public class Note_Spawner : MonoBehaviour {
 		}
 		count++;
 	}
+
+	public void setFreeze(bool value){
+        foreach (Note_Block nb in blocks)
+			nb.freeze = value;
+    }
 }

@@ -7,7 +7,7 @@ public class Compass : MonoBehaviour {
 
 	float bpm;
 	int count = 1;
-	float offset;
+	public float offset;
 	float crotchet;
 	float songPos, initialPos;
 	bool counting = false;
@@ -47,5 +47,9 @@ public class Compass : MonoBehaviour {
             if (songPos >= count * crotchet)
                 step(count - 1 + forward);
         }
+	}
+
+	public float getSongPos(){
+		return songPos + offset;
 	}
 }

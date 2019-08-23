@@ -21,6 +21,7 @@ public class Note_Receptor : MonoBehaviour {
     KeyCode[] keys; //the keys chosen for the notes
 
     bool inRange = false; //if note is in range
+	int sequence = 0; //how many notes the player has hit without missing
     int hitCount = 0; //how many notes from the block the player hit
 
 	void Start () {
@@ -28,6 +29,7 @@ public class Note_Receptor : MonoBehaviour {
 		spawn = this.transform.parent.GetComponent<Note_Spawner>();
         playerIndex = spawn.playerIndex; //to know which player is this guy
         //set keys
+		spawn.modifier = 1;
         if (playerIndex == 0)
             keys = new KeyCode[4] {KeyCode.A, KeyCode.S, KeyCode.W, KeyCode.D}; //to player 1
         else
@@ -58,6 +60,8 @@ public class Note_Receptor : MonoBehaviour {
 
 	void Update () {
         Sync_Range();
+
+		spawn.modtxt.text = "x\n" + spawn.modifier.ToString(); //show modifier on screen
 
         if (inRange){
             //check all keys pressed
@@ -93,7 +97,8 @@ public class Note_Receptor : MonoBehaviour {
 
     void Miss(){
         Debug.Log("missed");
-
+		sequence = 0;
+		spawn.modifier = 1;
         Reset();
     }
 
@@ -103,19 +108,22 @@ public class Note_Receptor : MonoBehaviour {
 
 		if(distance < okRange){
 			if(distance < perfectRange){
-                spawn.score += 300; //perfect score
+				spawn.score += 300 * spawn.modifier; //perfect score
                 spawn.blocks[0].HitBlock(3);
             }else if(distance < goodRange){
-                spawn.score += 200; //good score
+				spawn.score += 200 * spawn.modifier; //good score
                 spawn.blocks[0].HitBlock(2);
             }else {
-                spawn.score += 100; //default score
+				spawn.score += 100 * spawn.modifier; //default score
                 spawn.blocks[0].HitBlock(1);
             } 
-
+			sequence++;
+			if (sequence == 10) spawn.modifier = 2;
+			else if (sequence == 25) spawn.modifier = 3;
+			else if (sequence == 50) spawn.modifier = 5;
+			else if (sequence == 100) spawn.modifier = 10;
 			spawn.blocks.RemoveAt(0);
 		}
-
         Reset();
     }
 

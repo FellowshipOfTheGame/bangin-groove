@@ -1,0 +1,393 @@
+fileFormatVersion: 2
+guid: b522c32e34280da45b4eebe0369076a3
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: marcio_body_0
+    21300002: marcio_body_1
+    21300004: marcio_body_2
+    21300006: marcio_body_3
+    21300008: marcio_body_4
+    21300010: marcio_body_5
+    21300012: marcio_body_6
+    21300014: marcio_body_7
+    21300016: marcio_body_8
+    21300018: marcio_body_9
+    21300020: marcio_body_10
+    21300022: marcio_body_11
+    21300024: marcio_body_12
+    21300026: marcio_body_13
+  externalObjects: {}
+  serializedVersion: 7
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: -1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 2
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: marcio_body_0
+      rect:
+        serializedVersion: 2
+        x: 406
+        y: 864
+        width: 159
+        height: 181
+      alignment: 9
+      pivot: {x: 0.49999997, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1fa55e43e7ead044fa64a9bdd71a8a13
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: marcio_body_1
+      rect:
+        serializedVersion: 2
+        x: 612
+        y: 958
+        width: 204.00006
+        height: 208
+      alignment: 9
+      pivot: {x: 0.49999982, y: 0.5120193}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c75bcf1b3751ff43a8ae22586536ae7
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: marcio_body_2
+      rect:
+        serializedVersion: 2
+        x: 926
+        y: 886
+        width: 159
+        height: 181
+      alignment: 9
+      pivot: {x: 0.49999997, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6efe78d6c1ba554498c12efe8ae83907
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: marcio_body_3
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 669
+        width: 168
+        height: 254
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 842c948309917dd44a6e6f1dda8b2dc4
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: marcio_body_4
+      rect:
+        serializedVersion: 2
+        x: 569
+        y: 479
+        width: 284.99994
+        height: 461
+      alignment: 9
+      pivot: {x: 0.5000001, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1961a89f408e4fc4d9d02104643d69e4
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: marcio_body_5
+      rect:
+        serializedVersion: 2
+        x: 1185
+        y: 701
+        width: 168
+        height: 254
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5afa99e1ba18f744b9d1698c23e0edef
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: marcio_body_6
+      rect:
+        serializedVersion: 2
+        x: 363
+        y: 565
+        width: 82
+        height: 135
+      alignment: 9
+      pivot: {x: 0.49999997, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b69b08b0fb60a054888d93fa25a6ef4b
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: marcio_body_7
+      rect:
+        serializedVersion: 2
+        x: 1048
+        y: 575
+        width: 82
+        height: 135.00006
+      alignment: 9
+      pivot: {x: 0.49999997, y: 0.49999976}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd916e7594e368046844ad714ccb683d
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: marcio_body_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 113
+        width: 223.00002
+        height: 185.99997
+      alignment: 9
+      pivot: {x: 0.4887892, y: 0.50000006}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2cfe71c0d164864da3a0216980b6da2
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: marcio_body_9
+      rect:
+        serializedVersion: 2
+        x: 244.0085
+        y: 0
+        width: 194.99147
+        height: 473
+      alignment: 9
+      pivot: {x: 0.56408364, y: 0.49682873}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f3b09f13e9f1d143a7d81a2dddb7b54
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: marcio_body_10
+      rect:
+        serializedVersion: 2
+        x: 532
+        y: 119
+        width: 157.80005
+        height: 335
+      alignment: 9
+      pivot: {x: 0.46261075, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c2190be4ec81134b93edb4f9679061d
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: marcio_body_11
+      rect:
+        serializedVersion: 2
+        x: 718.4768
+        y: 129
+        width: 162.5232
+        height: 335
+      alignment: 9
+      pivot: {x: 0.55390984, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d11e27984542a44d80737db40938a7e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: marcio_body_12
+      rect:
+        serializedVersion: 2
+        x: 995.00006
+        y: 0
+        width: 169.99994
+        height: 471
+      alignment: 9
+      pivot: {x: 0.49999982, y: 0.49469218}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a0d96e7e1f2bfa41bceabeed36a17b9
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: marcio_body_13
+      rect:
+        serializedVersion: 2
+        x: 1262
+        y: 24
+        width: 223
+        height: 186
+      alignment: 9
+      pivot: {x: 0.5112108, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1f38f9fb7776ed4787a2389f9a45085
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 18390adc657838242a728e3715e3f9bc
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 636881046091387381
+  assetBundleName: 
+  assetBundleVariant: 

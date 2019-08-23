@@ -9,6 +9,8 @@ public class Note_Block : MonoBehaviour {
 	public GameObject notePrefab; //an prefab of the note
 	float speed; //the speed of the block
 
+	public bool freeze = false;
+
 	List<Note> myNotes;
 
 	void Start () {
@@ -16,7 +18,8 @@ public class Note_Block : MonoBehaviour {
 	}
 	
 	void Update () {
-		this.transform.position += Vector3.down * speed * Time.deltaTime; //move block down
+		if(!freeze)
+			this.transform.position += Vector3.down * speed * Time.deltaTime; //move block down
 	}
 	//decrypt note code and add notes to the block
 	public void Build(string notes){
