@@ -14,7 +14,7 @@ public class Anim_Manager : MonoBehaviour {
 
 	public Animator[] receptors;
 
-	public Animator screen, bg;
+	public Animator screen, bg, pause;
 	public Text rndTitle, rndLabel, rndText;
 	public string rhythmDesc, mashDesc;
 
@@ -162,5 +162,28 @@ public class Anim_Manager : MonoBehaviour {
 			rndText.text = rhythmDesc;
 		}
 		screen.SetTrigger("show");
+	}
+
+	public void PausePlayer(){
+		players[0].SetStatue(true);
+		players[1].SetStatue(true);
+		screen.enabled=false;
+		pause.SetTrigger("pause");
+	}
+
+	public void UnPausePlayer(){
+		pause.SetTrigger("unpause");
+		Invoke("CountDown", 0.3f);
+	}
+
+	public void ResumePlayer(){
+		players[0].SetStatue(false);
+		players[1].SetStatue(false);
+		screen.enabled=true;
+	}
+
+	public void SetConfirmScreen(bool value){
+		if (value)	pause.SetTrigger("confirm");
+		else pause.SetTrigger("back");
 	}
 }

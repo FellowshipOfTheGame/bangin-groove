@@ -91,4 +91,9 @@ public class Player : MonoBehaviour {
 		killer.SetTrigger("go");
 		this.spd = spd;
 	}
+
+	public void SetStatue(bool value){
+		dancer.anim.enabled=!value;
+		killer.enabled=!value;
+	}
 }

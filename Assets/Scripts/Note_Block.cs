@@ -9,7 +9,7 @@ public class Note_Block : MonoBehaviour {
 	public GameObject notePrefab; //an prefab of the note
 	float speed; //the speed of the block
 
-	public bool freeze = false;
+	bool freeze = false;
 
 	List<Note> myNotes;
 
@@ -62,5 +62,11 @@ public class Note_Block : MonoBehaviour {
 
 	void Vanish(){
 		Destroy(this.gameObject);
+	}
+
+	public void FreezeBlock(bool value){
+		freeze=value;
+		foreach(Note n in myNotes)
+			n.Freeze(value);
 	}
 }

@@ -45,6 +45,14 @@ public class Note : MonoBehaviour {
 		anim.SetTrigger("Fail");
 	}
 
+	public void Freeze(bool value){
+		anim.enabled=!value;
+	}
+
+	public void Kill(){
+		Destroy(this.gameObject);
+	}
+
 	public void Touch(int rank){
 		switch (rank){
 			case 1:

@@ -80,6 +80,6 @@ public class Note_Spawner : MonoBehaviour {
 
 	public void setFreeze(bool value){
         foreach (Note_Block nb in blocks)
-			nb.freeze = value;
+			nb.FreezeBlock(value);
     }
 }

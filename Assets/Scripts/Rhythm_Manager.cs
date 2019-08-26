@@ -9,10 +9,11 @@ public class Rhythm_Manager : MonoBehaviour {
     public static Rhythm_Manager instance; //singleton
 
     int round; //current round
-    bool canSpawn = false, counting = false; //control booleans
+    bool canSpawn = false, counting = false, suddenDeath = false; //control booleans
     public Compass compass; //step controller
 
     public Music music; //chosen music
+    float pauseTime = 0.0f;
 
     [Space(5)]
     public Note_Spawner[] spawners; //players 1 and 2
@@ -43,6 +44,7 @@ public class Rhythm_Manager : MonoBehaviour {
         Anim_Manager.instance.CountDown(); //countdown
         Anim_Manager.instance.TurnUp(); //set all start animations
         compass.Play(); //active compass
+        Game_Manager.instance.EnablePause();
     }
 
     //called every step in compass
@@ -56,19 +58,21 @@ public class Rhythm_Manager : MonoBehaviour {
         if (music.halfSize == count && round == 1) {
             canSpawn = false; //stop spawners
             round++;
+            Game_Manager.instance.BlockPause();
             CancelInvoke();
-            Invoke("Pause", spawners[0].getOffset() + 0.5f); //wait until the last note end your way to finish the round 1
+            Invoke("Gap", spawners[0].getOffset() + 0.5f); //wait until the last note end your way to finish the round 1
         }
         //check end of round 2
         if (music.songSize == count && round == 2) {
             canSpawn = false; //stop spawners
             round++;
+            Game_Manager.instance.BlockPause();
             CancelInvoke();
             Invoke("FinalScreen", spawners[0].getOffset() + music.ending); //wait until the last note end your way to finish the round 2
         }
     }
     //end round 1
-    void Pause() {
+    void Gap() {
         Anim_Manager.instance.register.StoreScore(1);
         //check winner of the round 1
         if (spawners[0].score > spawners[1].score) {
@@ -97,6 +101,7 @@ public class Rhythm_Manager : MonoBehaviour {
     //start round 2
     void Continue () {
         canSpawn = true; //allow spawners to work
+        Game_Manager.instance.EnablePause();
     }
     //end round 2
     void FinalScreen() {
@@ -133,7 +138,7 @@ public class Rhythm_Manager : MonoBehaviour {
         //call Manager
         Mash_Manager.instance.Invoke("Initialize", 3.2f);
         Anim_Manager.instance.StartMash(3.2f);
-        
+        suddenDeath = true;
         Anim_Manager.instance.CountDown(); //countdown
     }
     //restart the match
@@ -143,5 +148,31 @@ public class Rhythm_Manager : MonoBehaviour {
 
     public void Quit(){
         SceneManager.LoadScene("Menu");
+    }
+
+    public void Pause(){
+        if (!suddenDeath){
+             compass.counting=false;
+            foreach (Note_Spawner ns in spawners)
+                    ns.setFreeze(true); //freeze notes
+
+            pauseTime = (float)(AudioSettings.dspTime);
+            compass.source.Pause();
+        }else{
+            Mash_Manager.instance.PauseMash();
+        }
+    }
+
+    public void Resume(){
+        if(!suddenDeath){
+            compass.counting=true;
+            compass.payPause((float)(AudioSettings.dspTime) - pauseTime);
+            //Debug.Log("GAP: " + ((float)(AudioSettings.dspTime) - pauseTime).ToString());
+            foreach (Note_Spawner ns in spawners)
+                    ns.setFreeze(false);
+            compass.source.UnPause();
+        }else{
+            Mash_Manager.instance.ResumeMash();
+        }
     }
 }

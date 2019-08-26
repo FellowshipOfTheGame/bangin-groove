@@ -23,11 +23,13 @@ public class Mash_Manager : MonoBehaviour {
     [Space(5)]
     public Image[] notes; //the notes representation on canvas
     public Transform[] marks; //marks of each player in the barr
-    public Animator barr; //the barr
+    public Animator barr, hit1, hit2; //the barr
     public GameObject hits; //the animations who indicate which button to press
     public GameObject victoryScreen; //the victory pop up
     public Text victoryText; //that tells who won
     public Knife[] nobodyKnives;
+
+    float pauseTime = 0.0f;
 
     void Awake(){
         //singeton process
@@ -74,6 +76,7 @@ public class Mash_Manager : MonoBehaviour {
 
         mash = true; //start mash
         timeStart = Time.time; //set time reference
+        Game_Manager.instance.EnablePause();
         barr.SetTrigger("on"); //show the barr
     }
 
@@ -92,6 +95,7 @@ public class Mash_Manager : MonoBehaviour {
             }
             //on time's up or if one player hit the goal
             if (Time.time - timeStart >= timeLimit || counts[0] >= clickLimit || counts[1] >= clickLimit) {
+                Game_Manager.instance.BlockPause();
                 victoryScreen.SetActive(true); //show victory pop up
                 barr.SetTrigger("off");
                 hits.SetActive(false); //hide the indicators
@@ -118,5 +122,19 @@ public class Mash_Manager : MonoBehaviour {
         nobodyKnives[0].Fly(-1);
         nobodyKnives[1].gameObject.SetActive(true);
         nobodyKnives[1].Fly(1);
+    }
+
+    public void PauseMash(){
+        pauseTime = Time.time;
+        mash = false;
+        hit1.enabled=false;
+        hit2.enabled=false;
+    }
+
+    public void ResumeMash(){
+        timeStart += Time.time - pauseTime;
+        mash = true;
+        hit1.enabled=true;
+        hit2.enabled=true;
     }
 }

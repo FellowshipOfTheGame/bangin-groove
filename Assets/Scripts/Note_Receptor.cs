@@ -96,7 +96,7 @@ public class Note_Receptor : MonoBehaviour {
 	}
 
     void Miss(){
-        Debug.Log("missed");
+        //Debug.Log("missed");
 		sequence = 0;
 		spawn.modifier = 1;
         Reset();
@@ -131,19 +131,14 @@ public class Note_Receptor : MonoBehaviour {
         switch (i){
             case 0:
                 return spawn.blocks[0].notes.Contains("L");
-                break;
             case 1:
                 return spawn.blocks[0].notes.Contains("D");
-                break;
             case 2:
                 return spawn.blocks[0].notes.Contains("U");
-                break;
             case 3:
                 return spawn.blocks[0].notes.Contains("R");
-                break;
             default:
                 return false;
-                break;
         }
     }
 

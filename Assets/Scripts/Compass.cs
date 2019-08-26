@@ -6,11 +6,11 @@ public class Compass : MonoBehaviour {
 
 
 	float bpm;
-	int count = 1;
+	int count = 1, aux=0;
 	public float offset;
 	float crotchet;
 	float songPos, initialPos;
-	bool counting = false;
+	public bool counting = false;
 	public AudioSource source;
 	public AudioClip rhythmMusic;
 
@@ -42,14 +42,24 @@ public class Compass : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (counting){
-            songPos = (float)(AudioSettings.dspTime) * source.pitch - initialPos;
-
-            if (songPos >= count * crotchet)
+            songPos = (float)(AudioSettings.dspTime) - initialPos;
+	
+            if (songPos >= count * crotchet){
                 step(count - 1 + forward);
+				if(aux == 0){
+					Debug.Log(songPos);
+					aux=8;
+				}
+				aux--;
+			}
         }
 	}
 
 	public float getSongPos(){
 		return songPos + offset;
+	}
+
+	public void payPause(float gap){
+		initialPos += gap;
 	}
 }

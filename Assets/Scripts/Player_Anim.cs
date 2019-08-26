@@ -83,8 +83,8 @@ public class Player_Anim : MonoBehaviour {
 
 	string GetStep(int index, int player){
 		if(steps[index].Contains("/")){
-			Debug.Log("divide!!! :" + steps[index].Substring(0, steps[index].IndexOf('/')) +
-			" " + steps[index].Substring(steps[index].IndexOf('/') + 1));
+			//Debug.Log("divide!!! :" + steps[index].Substring(0, steps[index].IndexOf('/')) +
+			//" " + steps[index].Substring(steps[index].IndexOf('/') + 1));
 
 			if(player == 0)
 				return steps[index].Substring(0, steps[index].IndexOf('/'));
