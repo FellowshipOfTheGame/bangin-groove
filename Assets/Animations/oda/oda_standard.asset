@@ -1,0 +1,70 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae0543fe805424df99fe08ce744cbe49, type: 3}
+  m_Name: oda_standard
+  m_EditorClassIdentifier: 
+  m_PoseEntries:
+  - path: esqueleto/tronco bone
+    localPosition: {x: 0, y: 1.9413528, z: 0}
+    localRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: esqueleto/tronco bone/cabeca bone
+    localPosition: {x: 4.5623546, y: -0.00000047683716, z: 0}
+    localRotation: {x: 0, y: 0, z: -0.012723157, w: 0.99991906}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: esqueleto/tronco bone/antebracoD bone
+    localPosition: {x: 3.6253743, y: 1.3255374, z: 0}
+    localRotation: {x: 0, y: 0, z: 0.9946744, w: 0.10306746}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: esqueleto/tronco bone/antebracoD bone/bracoD bone
+    localPosition: {x: 2.364092, y: 0.00000047683716, z: 0}
+    localRotation: {x: 0, y: 0, z: 0, w: 1}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: esqueleto/tronco bone/antebracoD bone/bracoD bone/maoD bone
+    localPosition: {x: 4.113964, y: 0.00000043213367, z: 0}
+    localRotation: {x: 0, y: 0, z: 0.18147899, w: 0.98339486}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: esqueleto/tronco bone/antebracoE bone
+    localPosition: {x: 3.6412668, y: -1.3030608, z: 0}
+    localRotation: {x: 0, y: 0, z: -0.9949109, w: 0.10075866}
+    localScale: {x: 1.0000001, y: 1.0000001, z: 1}
+  - path: esqueleto/tronco bone/antebracoE bone/bracoE bone
+    localPosition: {x: 2.3170915, y: 0, z: 0}
+    localRotation: {x: 0, y: 0, z: 0, w: 1}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: esqueleto/tronco bone/antebracoE bone/bracoE bone/maoE bone
+    localPosition: {x: 4.113964, y: 0.00000043213367, z: 0}
+    localRotation: {x: 0, y: 0, z: -0.10597252, w: 0.9943691}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: esqueleto/tronco bone/coxaD bone
+    localPosition: {x: -1.2234154, y: 0.7221039, z: 0}
+    localRotation: {x: 0, y: 0, z: 0.9985068, w: 0.054627825}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: esqueleto/tronco bone/coxaD bone/pernaD bone
+    localPosition: {x: 4.706842, y: 0.00000035762787, z: 0}
+    localRotation: {x: 0, y: 0, z: 0, w: 1}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: esqueleto/tronco bone/coxaD bone/pernaD bone/peD bone
+    localPosition: {x: 4.713121, y: -0.00000017846469, z: 0}
+    localRotation: {x: 0, y: 0, z: -0.4109336, w: 0.91166526}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: 'esqueleto/tronco bone/coxaE bone '
+    localPosition: {x: -1.2069366, y: -0.70561314, z: 0}
+    localRotation: {x: 0, y: 0, z: -0.99909735, w: 0.04247968}
+    localScale: {x: 1.0000008, y: 1.0000008, z: 1}
+  - path: esqueleto/tronco bone/coxaE bone /pernaE bone
+    localPosition: {x: 4.706842, y: 0.00000035762787, z: 0}
+    localRotation: {x: 0, y: 0, z: 0, w: 1}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: esqueleto/tronco bone/coxaE bone /pernaE bone/peE bone
+    localPosition: {x: 4.713121, y: -0.00000017846469, z: 0}
+    localRotation: {x: 0, y: 0, z: 0.41485995, w: 0.9098853}
+    localScale: {x: 1, y: 1, z: 1}

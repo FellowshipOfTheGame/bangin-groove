@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: Hurikin
+  m_Controller: {fileID: 9100000, guid: eb0a790f71277c6429c6f8b69636fbec, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 8f20e506c31baaa48a9624d9dc112e09, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 1bd7302a43c029f40b9b080ed8a0f840, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: d692f0cb4616c564e9e53c928d33816b, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: c7fe411c4489b11418c295292aac388e, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: f2714a8024b0d354788354b858198d5b, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 23d81f2550a2f19489298dda6a99d3b8, type: 2}

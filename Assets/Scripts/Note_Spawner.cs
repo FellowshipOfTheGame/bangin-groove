@@ -25,12 +25,12 @@ public class Note_Spawner : MonoBehaviour {
 
 	RandomNotes rand = null; //randomize script
 
-	public void Initialize () {
+	public void Initialize (string[] notes) {
 		//initialize everything
 		blocks = new List<Note_Block>();
         victories = 0;
 		rand = this.GetComponent<RandomNotes>();
-		sequel = Rhythm_Manager.instance.music.notes;
+		sequel = notes;
 	}
 
 	public float getOffset(){

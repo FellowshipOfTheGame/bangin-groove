@@ -20,13 +20,14 @@ public class Throw : MonoBehaviour {
 	public void ThrowKnife(){
 		Release();
 		knife.GetComponent<Knife>().Fly(dir);
+		//Game_Manager.instance.SlowMotion();
 	}
 
 	public void Release(){
 		hand.SetActive(true);
 		weapon.SetActive(false);
 		knife.SetActive(true);
-		knife.transform.SetParent(transform.parent);
+		knife.transform.SetParent(transform);
 	}
 
 	public void PickUp(){

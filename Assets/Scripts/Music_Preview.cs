@@ -18,6 +18,7 @@ public class Music_Preview : MonoBehaviour
     void Start(){
         source.clip = musics[index].song;
         album.sprite = musics[index].art;
+        source.volume = musics[index].volume;
         source.Play();
     }
 
@@ -41,6 +42,7 @@ public class Music_Preview : MonoBehaviour
         source.Stop();
         source.clip = musics[index].song;
         album.sprite = musics[index].art;
+        source.volume = musics[index].volume;
         source.Play();
 	}
 

@@ -1,0 +1,112 @@
+#main melody
+1LR 1; 1L 1; 1R 1; 1L 0; 1U 1; 1D 0; 1U 2; 1U 1
+2LR 1; 2L 1; 2R 1; 2L 0; 2U 1; 2D 0; 2U 2; 2U 1
+D 1; L 1; R 1; L 0; U 1; D 0; U 2; U 1
+D 1; L 1; R 1; L 0; U 1; D 0; U 2; U 1
+2LR 1; 2L 1; 2R 1; 2L 0; 2U 1; 2D 0; 2U 2; 2U 1
+1LR 1; 1L 1; 1R 1; 1L 0; 1U 1; 1D 0; 1U 2; 1U 1
+2LR 1; 2L 1; 2R 1; 2L 0; 2U 1; 2D 0; 2U 2; 2U 1
+1LR 1; 1L 1; 1R 1; 1L 0; 1U 1; 1D 0; 1U 2; 1U 1
+
+#variation
+xL_R 1; D 1; U 2; U 2; D 0; U 1; U 0; U 0
+xL_R 1; D 1; U 1; xR_L 0; xR_L 3; xL_R 1; xL_R 1
+xR_L 1; U 1; D 1; xL_R 0; xL_R 2; xR_L 1; xR_L 1
+
+xL_R 1; D 1; U 2; U 2; D 0; U 0; U 0; U 0; U 0
+xL_R 1; D 1; U 1; xR_L 0; xR_L 3; xL_R 1; xL_R 1
+xR_L 1; U 1; D 1; xL_R 0; xL_R 3; xR_L 1; xR_L 1
+
+xL_R 1; D 1; U 2; U 2; D 0; U 0; U 0; U 0; U 0
+xL_R 1; D 1; U 1; xR_L 0; xR_L 3; xL_R 1; xL_R 1
+
+#main melody
+1LR 1; 1L 1; 1R 1; 1L 0; 1U 1; 1D 0; 1U 2; 1U 1
+2LR 1; 2L 1; 2R 0; 2L 0; 2U 1; 2D 0; 2U 2; 2U 1
+D 1; L 1; R 1; L 0; U 1; D 0; U 2; U 1
+D 1; L 1; R 0; L 0; U 1; D 0; U 2; U 1
+2LR 1; 2L 1; 2R 1; 2L 0; 2U 1; 2D 0; 2U 2; 2U 1
+1LR 1; 1L 1; 1R 0; 1L 0; 1U 1; 1D 0; 1U 2; 1U 1
+2LR 1; 2L 1; 2R 1; 2L 0; 2U 1; 2D 0; 2U 2; 2U 1
+1LR 1; 1L 1; 1R 1; 1L 0; 1U 1; 1D 0; 1U 2; 1U 1
+
+#little variation
+D 1; L 1; R 0; L 0; U 1; D 0; U 2; U 1
+xL_R 1; D 1; U 2; U 2; D 0; U 0; U 0; U 0; U 0
+xL_R 1; D 1; U 1; xR_L 0; xR_L 3; xL_R 1; xL_R 1
+xR_L 1; U 1; D 1; xL_R 0; xL_R 3; xR_L 1; xR_L 1
+
+xL_R 1; D 0; U 1; xR_L 0; xR_L 3; xL_R 1; xL_R 1
+xR_L 1; U 1; D 1; xL_R 0; xL_R 3; xR_L 1; xR_L 6
+
+########################### 1ST ROUND END ###########################
+22
+
+4
+
+#sparse beggining
+D 5; U 3
+1L 0; 1R 0; 1L 0; 1LR 1
+D 5; U 3
+2L 0; 2R 0; 2L 0; 2LR 1
+D 5; U 0; U 3
+R 0; L 0; R 0; D 1
+D 5; U 1; U 1
+R 0; L 0; R 0; D 0
+
+D 5; U 3
+2L 0; 2R 0; 2L 0; 2LR 1
+D 5; U 3
+1L 0; 1R 0; 1L 0; 1LR 1
+D 5; U 3
+R 0; L 0; R 0; D 1
+D 5; U 0; U 2
+R 0; L 0; R 0; D 1
+
+#tiny aceleration
+D 2; 1U 1; 1U 0; 1R 3
+2R 0; 2U 0; 2U 0; 2R 1
+D 2; 2U 1; 2U 0; 2L 3
+1L 0; 1U 0; 1U 0; 1L 1
+
+D 3; U 1; U 0; R 2
+R 0; U 0; U 0; R 1
+D 3; U 1; U 0; L 3
+L 0; U 0; U 0; L 1
+
+D 2; 1U 1; 1U 0; 1R 3
+2R 0; 2U 0; 2U 0; 2R 1
+D 2; 2U 1; 2U 0; 2L 3
+1L 0; 1U 0; 1U 0; 1L 1
+
+D 6; D 6; U 0; U 0; U 1
+D 6; D 2; U 1; U 0; U 1
+
+#back to variation
+xL_R 1; D 1; D 1; xR_L 0; xL_R 2; D 0; U 0; U 0; U 0; U 0; U 0; U 3
+D 1; D 1; D 4
+U 1; U 2
+
+
+#main melody
+L 1; R 0; L 3; U 1; D 1; U 1
+D 1; L 1; R 1; L 1; U 1; D 1; U 2
+1LR 1; 1L 1; 1R 1; 1L 2; 1U 1; 1D 1; 1U 1
+2LR 1; 2L 1; 2R 1; 2L 2; 2U 1; 2D 1; 2U 1
+
+#little variation 2
+1LR 1; 1L 1; 1R 1; 1L 2; 1U 1; 1D 1; 1U 1
+2LR 1; 2L 1; 2R 1; 2L 2; 2U 1; 2D 1; 2U 1
+D 1; L 1; R 1; L 2; D 1; U 0; U 0; U 0; U 0; U 0
+D 1; L 1; R 1; L 2; U 1; D 1; U 1
+
+1LR 1; 1L 1; 1R 1; 1L 2; 1U 1; 1D 1; 1U 1
+2LR 1; 2L 1; 2R 1; 2L 2; 2U 1; 2D 1; 2U 1
+
+#encerramento
+D 1; L 1; R 1; L 2; U 1; D 1; U 2
+D 2; xL_R 0; xR_L 0; xL_R 0; xR_L 0; U 0
+
+########################### 2ND ROUND END ###########################
+
+

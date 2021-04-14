@@ -20,6 +20,7 @@ public class Game_Manager : MonoBehaviour {
 			Destroy(this.gameObject);
 		}
 		DontDestroyOnLoad(this.gameObject);
+		Time.timeScale = 1.0f;
 	}
 
 	// Use this for initialization
@@ -40,6 +41,10 @@ public class Game_Manager : MonoBehaviour {
 
 	public void BackToMenu(){
 		SceneManager.LoadScene(0);
+	}
+
+	public void SlowMotion(){
+		//Time.timeScale = 0.02f;
 	}
 
 	public void chooseMusic(Music music){

@@ -326,10 +326,10 @@ TextureImporter:
         serializedVersion: 2
         x: 187
         y: 27
-        width: 121
-        height: 303
+        width: 135.49878
+        height: 312.06177
       alignment: 9
-      pivot: {x: 0.49999997, y: 0.5}
+      pivot: {x: 0.4464985, y: 0.48548082}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -344,12 +344,12 @@ TextureImporter:
       name: safira_body_12
       rect:
         serializedVersion: 2
-        x: 357
+        x: 356.7748
         y: 0
-        width: 98
-        height: 367
+        width: 98.22519
+        height: 377.24747
       alignment: 9
-      pivot: {x: 0.5, y: 0.493188}
+      pivot: {x: 0.50114626, y: 0.47979116}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -451,6 +451,6 @@ TextureImporter:
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
-  userData: 636880206952307789
+  userData: 637034668494983273
   assetBundleName: 
   assetBundleVariant: 

@@ -91,17 +91,17 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 77.59549
-        y: 456.65332
+        y: 451.2735
         width: 231.40451
-        height: 220.34668
+        height: 221.7265
       alignment: 9
-      pivot: {x: 0.5613741, y: 0.5960911}
+      pivot: {x: 0.5613741, y: 0.61664486}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6430d8d916ef4f84099648abb0ad2e7e
+      spriteID: 07d99efe73eb6fa4ca4a5caf4458d355
       vertices: []
       indices: 
       edges: []
@@ -121,7 +121,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 502c61e63a495624cb97ac231c7bdf20
+      spriteID: 1fc625665e3b89041b4752b2c17884d6
       vertices: []
       indices: 
       edges: []
@@ -141,7 +141,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9d9358c29c6e0814788755999636cfcc
+      spriteID: 193a9054fdcd9134ba55403ea71d536d
       vertices: []
       indices: 
       edges: []
@@ -157,6 +157,6 @@ TextureImporter:
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
-  userData: 636881194519624149
+  userData: 637034122833071945
   assetBundleName: 
   assetBundleVariant: 

@@ -1,0 +1,47 @@
+1
+1LR 9; 2LR 1
+
+#complement start
+R 3; L 3; U 1; L 3; R 2; D 9
+2LR 9; 1LR 2
+
+#main melody
+R 3; L 2; U 2; L 3; R 2; D 2
+1LR 3; 1LR 2; D 2; 2LR 3; 2LR 2; U 2
+R 3; L 2; U 2; L 3; R 2; D 1
+1LR 3; 1LR 2; D 2; 2LR 3; 2LR 2; U 2
+
+#main melody 2
+L 1; R 1; L 2; U 2; R 1; L 1; R 1; D 2
+U 1; U 0; U 3; xR_L 2; U 1; U 1; U 2; D 1
+L 1; R 1; L 2; U 2; R 1; L 1; R 2; D 2
+U 1; U 0; U 3; xR_L 2; U 1; U 0; U 3; D 2
+
+########################### 1ST ROUND END ###########################
+22
+
+#complement restart
+U 2; U 2; U 1; D 2; D 1; U 2; U 1
+
+#sad strings
+xL_R 1; xL_R 2; xL_R 1; xL_R 2; D 1; D 2; D 1; D 2
+xR_L 1; xR_L 2; xR_L 1; xR_L 2; D 1; D 2; D 1; D 2
+U 1; U 2; U 1; U 2; D 1; D 2; D 1; D 2
+xL_R 1; xL_R 2; xR_L 1; xR_L 2; D 1; D 2; D 1; D 1
+
+#main melody
+R 3; L 2; U 2; L 3; R 2; D 2
+1LR 3; 1LR 2; D 1; 2LR 3; 2LR 2; U 2
+R 3; L 2; U 1; L 3; R 2; D 1
+1LR 3; 1LR 2; D 2; 2LR 3; 2LR 2; U 2
+
+#main melody 2
+L 1; R 1; L 2; U 1; R 1; L 1; R 1; D 2
+U 1; U 1; U 2; xR_L 2; U 1; U 1; U 2; D 1
+L 1; R 1; L 2; U 2; R 1; L 1; R 1; D 2
+U 1; U 1; U 2; xR_L 2; U 1; U 1; U 2; D 1
+
+D 2
+########################### 2ND ROUND END ###########################
+
+

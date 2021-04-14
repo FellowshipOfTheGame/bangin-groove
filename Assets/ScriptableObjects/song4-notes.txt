@@ -1,0 +1,68 @@
+#tecno zig zag
+xL_R 0; xR_L 1; xL_R 0; xR_L 1; xL_R 0; xR_L 1; xL_R 1; D 1; D 1
+
+#raise
+U 15
+U 2; U 2; D 8
+
+#antecipation
+R 12; R 1; D 0; U 6; D 7
+L 12; L 1; D 3
+D 1; U 1; D 1; U 0; D 0; U 2
+
+#dance zig zag
+L 1; R 1; U 1; U 1
+R 0; L 0; R 0; L 0; U 1; U 1
+R 0; L 0; R 0; L 0; D 1; D 1
+R 1; L 0; D 1; D 1
+
+R 5; L 0; L 6
+U 0; U 1; R 1; R 1; D 1; U 1; D 1; U 1; D 1
+
+#more zig zags
+U 0; R 1; U 0; L 1; U 8
+D 0; R 1; D 0; L 1; D 8
+
+1LR 15; 2LR 14; 1LR 15; 2LR 14
+
+#heat up
+D 1; D 0; D 11
+U 15
+U 7; L 1; R 1; L 0; U 2
+
+R 2; D 3; L 2; U 4
+
+R 0; R 1; U 1; L 0; L 0; L 1; U 1; D 0
+
+########################### 1ST ROUND END ###########################
+34
+
+#tecno zig zag
+xL_R 0; xR_L 1; xL_R 0; xR_L 1; xL_R 0; xR_L 1; xL_R 1; D 1; D 1
+
+#high notes
+U 2; U 2; U 2; R 0; R 0; R 0; R 1; R 1
+U 1; U 2; U 2; L 0; L 0; L 0; L 1; L 1
+
+#new heat up
+L 2; L 3; D 3; D 3
+U 3; U 3; R 3; R 3
+
+#fall
+U 6
+U 7
+D 7
+D 14
+1LR 7
+2LR 6
+D 7
+
+#ENCERRAMENTO
+R 0; R 1; U 1; L 0; L 0; L 1; U 1; D 3
+L 0; L 1; D 1; R 0; R 0; R 1; D 1; U 4
+
+D 1
+
+########################### 2ND ROUND END ###########################
+
+

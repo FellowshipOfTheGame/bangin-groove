@@ -12,11 +12,15 @@ public class Player : MonoBehaviour {
 	public Animator killer;
 	public int index;
 
+	public float mashOffset;
+	Vector3 originalPos;
+
 	float spd = 0.0f;
 
 	bool dancing;
 
 	public void Initialize(int player, Music music){
+		originalPos = this.transform.position;
 		dancing = true;
 		index = player;
 		dancer.gameObject.SetActive(true);
@@ -85,6 +89,7 @@ public class Player : MonoBehaviour {
 		killer.SetInteger("player", index);
 		killer.SetTrigger("atk");
 		spd = 0;
+		this.transform.position = originalPos + Vector3.right * 3.481f * (1 - 2 * index);
 	}
 
 	public void Walk(float spd){

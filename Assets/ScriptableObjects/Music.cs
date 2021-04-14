@@ -9,15 +9,18 @@ public class Music : ScriptableObject {
 	public string title; 
 
 	public Sprite art;
+	public float volume;
 	public int bpm;
 	[Space(5)]
 	public int songSize, halfSize, halfGap; //number of notes in all song, 1st round and the gap between rounds
 	public float offset, ajust, ending; //adjusts of time on start and end of the song
 	[Space(5)]
-	public string[] notes; //note code sequel
+
+	public TextAsset notes;
 
 	public string[] moves;
 	
+
 	
 	//public AudioClip preview;
 	//public Sprite album;

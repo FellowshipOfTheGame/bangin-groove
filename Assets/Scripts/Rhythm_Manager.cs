@@ -8,7 +8,7 @@ public class Rhythm_Manager : MonoBehaviour {
 
     public static Rhythm_Manager instance; //singleton
 
-    int round; //current round
+    int round, middle, end; //current round
     bool canSpawn = false, counting = false, suddenDeath = false; //control booleans
     public Compass compass; //step controller
 
@@ -34,8 +34,9 @@ public class Rhythm_Manager : MonoBehaviour {
         compass.step += CallSpawn; //synchronize spawn in compass
         round = 1;
 
-        spawners[0].Initialize();
-        spawners[1].Initialize();
+        string[] notes = TextInterpreter.GetSteps(Rhythm_Manager.instance.music.notes, out middle, out end);
+        spawners[0].Initialize(notes);
+        spawners[1].Initialize(notes);
     }
 
     //start to dance!
@@ -47,6 +48,10 @@ public class Rhythm_Manager : MonoBehaviour {
         Game_Manager.instance.EnablePause();
     }
 
+    public void UnPause(){
+        Game_Manager.instance.PausePlay();
+    }
+
     //called every step in compass
     public void CallSpawn(int count){
         //wake up the the spawners
@@ -55,7 +60,7 @@ public class Rhythm_Manager : MonoBehaviour {
                 ns.ChangeStep(count); //spawn notes
         }
         //check end of round 1
-        if (music.halfSize == count && round == 1) {
+        if (count == middle && round == 1) {
             canSpawn = false; //stop spawners
             round++;
             Game_Manager.instance.BlockPause();
@@ -63,7 +68,7 @@ public class Rhythm_Manager : MonoBehaviour {
             Invoke("Gap", spawners[0].getOffset() + 0.5f); //wait until the last note end your way to finish the round 1
         }
         //check end of round 2
-        if (music.songSize == count && round == 2) {
+        if (count == end && round == 2) {
             canSpawn = false; //stop spawners
             round++;
             Game_Manager.instance.BlockPause();
@@ -87,8 +92,8 @@ public class Rhythm_Manager : MonoBehaviour {
             Anim_Manager.instance.ShowDraw(spawners[0].victories, spawners[1].victories, false);
         }
         //call the counter and rouns 2 in time
-        Invoke("ReCount", music.halfGap * 60.0f / music.bpm - 4.0f);
-        Invoke("Continue", music.halfGap * 60.0f / music.bpm - 0.5f - spawners[0].getOffset());
+        Invoke("ReCount", 20 * 60.0f / music.bpm - 4.0f);
+        Invoke("Continue", 20 * 60.0f / music.bpm - 0.5f - spawners[0].getOffset());
     }
     //reset scores and call the counter
     void ReCount(){

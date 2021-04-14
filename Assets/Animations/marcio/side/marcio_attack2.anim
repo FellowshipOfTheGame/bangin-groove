@@ -79,7 +79,7 @@ AnimationClip:
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       - serializedVersion: 3
         time: 0.5
-        value: {x: 0, y: 0, z: -3.2070003}
+        value: {x: 0, y: 0, z: -23.751001}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -269,15 +269,15 @@ AnimationClip:
       - serializedVersion: 3
         time: 0.33333334
         value: {x: -1.89, y: 2.7, z: 0.038916886}
-        inSlope: {x: 0, y: 0, z: 0}
-        outSlope: {x: 0, y: 0, z: 0}
+        inSlope: {x: -1.4519967, y: 3.7680016, z: 0}
+        outSlope: {x: -1.4519967, y: 3.7680016, z: 0}
         tangentMode: 0
         weightedMode: 0
         inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       - serializedVersion: 3
         time: 0.5
-        value: {x: -1.89, y: 2.7, z: 0.038916886}
+        value: {x: -2.011, y: 3.014, z: 0.038916886}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -865,7 +865,7 @@ AnimationClip:
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 0.5
-        value: -3.2070003
+        value: -23.751001
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -1263,15 +1263,15 @@ AnimationClip:
       - serializedVersion: 3
         time: 0.33333334
         value: -1.89
-        inSlope: 0
-        outSlope: 0
+        inSlope: -1.4519967
+        outSlope: -1.4519967
         tangentMode: 136
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 0.5
-        value: -1.89
+        value: -2.011
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -1309,15 +1309,15 @@ AnimationClip:
       - serializedVersion: 3
         time: 0.33333334
         value: 2.7
-        inSlope: 0
-        outSlope: 0
+        inSlope: 3.7680016
+        outSlope: 3.7680016
         tangentMode: 136
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 0.5
-        value: 2.7
+        value: 3.014
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -1718,7 +1718,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: esqueleto/tronco bone/coxaE bone/pernaE bone/peE bone
+    path: esqueleto/tronco bone/coxaD bone/pernaD bone/peD bone
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -1728,7 +1728,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
-    path: esqueleto/tronco bone/coxaE bone/pernaE bone/peE bone
+    path: esqueleto/tronco bone/coxaD bone/pernaD bone/peD bone
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -1738,7 +1738,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.x
-    path: esqueleto/tronco bone/coxaE bone/pernaE bone/peE bone
+    path: esqueleto/tronco bone/coxaD bone/pernaD bone/peD bone
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -1748,7 +1748,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: esqueleto/tronco bone/cabeca bone
+    path: esqueleto/tronco bone/antebracoD bone/bracoD bone/maoD bone
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -1758,7 +1758,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
-    path: esqueleto/tronco bone/cabeca bone
+    path: esqueleto/tronco bone/antebracoD bone/bracoD bone/maoD bone
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -1768,7 +1768,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.x
-    path: esqueleto/tronco bone/cabeca bone
+    path: esqueleto/tronco bone/antebracoD bone/bracoD bone/maoD bone
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -1808,7 +1808,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: esqueleto/tronco bone/coxaD bone/pernaD bone/peD bone
+    path: esqueleto/tronco bone/cabeca bone
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -1818,7 +1818,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
-    path: esqueleto/tronco bone/coxaD bone/pernaD bone/peD bone
+    path: esqueleto/tronco bone/cabeca bone
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -1828,7 +1828,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.x
-    path: esqueleto/tronco bone/coxaD bone/pernaD bone/peD bone
+    path: esqueleto/tronco bone/cabeca bone
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -1838,7 +1838,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.x
-    path: esqueleto/tronco bone/antebracoD bone/bracoD bone/maoD bone
+    path: esqueleto/tronco bone/coxaE bone/pernaE bone/peE bone
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -1848,7 +1848,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
-    path: esqueleto/tronco bone/antebracoD bone/bracoD bone/maoD bone
+    path: esqueleto/tronco bone/coxaE bone/pernaE bone/peE bone
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -1858,7 +1858,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: esqueleto/tronco bone/antebracoD bone/bracoD bone/maoD bone
+    path: esqueleto/tronco bone/coxaE bone/pernaE bone/peE bone
     classID: 4
     script: {fileID: 0}
   m_HasGenericRootTransform: 0

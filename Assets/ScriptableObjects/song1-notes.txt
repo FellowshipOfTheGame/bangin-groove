@@ -1,0 +1,182 @@
+1
+#main melody
+1R 1; 1R 1; 1U 0; 1U 2; 1D 0; 1D 1; 1L 4
+2R 1; 2R 1; 2U 0; 2U 2; 2D 0; 2D 1; 2L 4
+L 1; L 1; U 0; U 2; D 0; D 1; R 4
+L 1; L 1; U 0; U 2; D 0; D 1; R 0
+
+1
+#zig zag
+2U 0; 2D 0; 2U 2
+2L 2
+1U 0; 1D 0; 1U 2
+1R 2
+R 0; L 0; R 0
+2LR 1; 1LR 1; 2LU 1; 2LU 1
+
+U 1; D 1
+
+1
+#zig zag
+U 0; D 0; U 2
+L 2
+U 0; D 0; U 2
+R 2
+R 0; L 0; R 0
+2LR 1; 1LR 1; 2LU 1; 2LU 1
+
+U 0; D 2
+4
+#main melody
+R 1; R 1; U 0; U 2; D 0; D 1; L 4
+L 1; L 1; U 0; U 2; D 0; D 1; R 0
+
+4
+#floss
+D 1; U 1; D 1; U 1; D 1; U 1; D 1; U 1
+R 1; U 1; R 1; U 1; R 1; U 1; R 1; U 1
+R 1; D 1; R 1; D 1; R 1; D 1; R 1; D 1
+L 0; D 0; L 0; D 0
+U 1
+L 0; D 0; L 0; D 0
+U 0; U 0; U 0
+
+3
+#main melody
+xR_L 1; xR_L 1; xU_D 0; xU_D 2; xD_U 0; xD_U 1; xL_R 4
+xL_R 1; xL_R 1; xD_U 0; xD_U 2; xU_D 0; xU_D 1; xR_L 0
+
+1
+#little spin
+xR_L 0; xU_D 0; xL_R 0; xD_U 3
+L 3; R 3; L 3; R 3; U 3; D 3; U 3
+1LR 7; 2LR 1
+L 0; R 1; U 0; D 0
+
+1
+L 3; R 3; L 3; R 3; U 3; D 3; U 3; D 3
+
+#solo main melody
+1R 1; 1R 1; 1U 0; 1U 2; 1D 0; 1D 1; 1L 4
+D 1; L 1; R 1; U 3
+D 1; D 3; R 1; R 1
+D 0; D 2; L 0; L 0; U 0; U 4
+1LR 7; 2LR 7
+
+#solo main melody
+2R 1; 2R 1; 2U 0; 2U 2; 2D 0; 2D 1; 2L 4
+2LR 7; 1LR 7
+D 3; D 3; U 3; U 2
+
+########################### 1ST ROUND END ###########################
+21
+
+4
+
+#zig zag 2
+1L 0; 1R 0; 1L 0; 1R 1
+1D 2
+2L 0; 2R 0; 2L 0; 2R 1
+2U 2
+L 0; R 0; L 0; R 1
+L 2
+
+1LD 1; 2DR 1; 1UR 1; 2LU 1
+
+#zig zag 2
+1L 0; 1R 0; 1L 0; 1R 1
+1D 2
+2L 0; 2R 0; 2L 0; 2R 1
+2U 2
+L 0; R 0; L 0; R 1
+L 2
+
+1LD 1; 2DR 1; 1UR 1; 2LU 1
+
+#happy beat
+L 1; R 1; U 1; D 0; D 0
+L 1; R 1; U 1; D 0; D 0
+L 1; R 1; U 1; D 0; D 0
+L 1; R 1; U 1; D 0; D 0
+R 1; L 1; D 1; U 0; U 0
+R 1; L 1; D 1; U 0; U 0
+R 1; L 1; D 1; U 0; U 0
+R 1; L 1; D 1; U 0; U 0
+
+#happy beat
+1LR 1; 1LR 1; 1LR 1; 1U 0; 1D 0
+1LR 1; 1LR 1; 1LR 1; 1U 0; 1D 0
+2LR 1; 2LR 1; 2LR 1; 2U 0; 2D 0
+2LR 1; 2LR 1; 2LR 1; 2U 0; 2D 0
+1LR 1; 1LR 1; 1LR 1; 1D 0; 1U 0
+2LR 1; 2LR 1; 2LR 1; 2D 0; 2U 0
+L 1; L 1; L 1; U 0; D 0
+R 1; R 1; R 1; D 0; U 0
+
+U 7; R 7; D 7; L 0
+
+4
+#zig zag
+2L 0; 2U 0; 2L 0
+2LU 4
+1L 0; 1U 0; 1L 0
+1LU 4
+2R 0; 2D 0; 2R 0
+2DR 4
+1R 0; 1D 0; 1R 0
+1DR 4
+
+#zig zag 2
+L 0; R 0; L 0; R 1
+D 2
+L 0; R 0; L 0; R 1
+U 2
+L 0; R 0; L 0; R 1
+L 1
+
+D 1; D 1; U 0; U 0
+
+3
+#zig zag 2
+1R 0; 1L 0; 1R 0; 1L 1
+1D 2
+2R 0; 2L 0; 2R 0; 2L 1 
+2U 2
+R 0; L 0; R 0; L 1
+U 1; D 1; U 1; D 1
+U 1; D 0
+
+#zig zag 2
+xL_R 0; xR_L 0; xL_R 0; xR_L 1
+D 2
+xR_L 0; xL_R 0; xR_L 0; xL_R 1
+D 1
+xL_R 0; xR_L 0; xL_R 1
+D 1; xR_L 1; U 1; xL_R 1
+D 0; D 0; U 0; U 0
+
+4
+1LR 7; 2LR 8
+D 0; D 0; U 0; U 0; R 0; L 2
+R 0; L 0; R 0; L 3
+2LR 7; 1LR 7
+
+#final floss
+D 1; U 1; D 1; U 1
+R 1; U 1; R 1; U 1
+R 1; D 1; R 1; D 1
+L 1; D 1; L 1; D 1
+
+L 0; R 0; L 0; R 0
+U 0; D 0; U 0; D 0
+
+U 1; L 1; D 1; R 1 
+
+L 0; R 0; L 0; R 0
+L 0; R 0; L 0; R 0
+U 0; D 0; U 0; D 0
+U 0; D 0; U 0; D 0
+L 0
+12
+
+########################### 2ND ROUND END ###########################
